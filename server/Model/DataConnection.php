@@ -2,15 +2,16 @@
 
 class DataConnection {
 
-
-            private $server = 'localhost';
-            private $dbname = 'gbay_db';
-            private $user = 'becode';
-            private $pass = 'becode';
             
             public function connect(){
+                
+                $server = $_ENV['MySQL_DB_HOST'];
+                $user = $_ENV['MySQL_DB_USER_NAME'];
+                $pass = $_ENV['MySQL_DB_PASSWORD'];
+                $dbname = $_ENV['MySQL_DB_NAME'];
+
                 try {
-                    $conn = new PDO('mysql:host=' .$this->server .';dbname=' . $this->dbname, $this->user, $this->pass);
+                    $conn = new PDO('mysql:host=' .$server .';dbname=' . $dbname, $user, $pass);
                     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     //echo "Database connected: ";
                     return $conn;
