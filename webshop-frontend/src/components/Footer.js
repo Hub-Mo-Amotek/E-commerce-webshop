@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Faq from './Faq';
 
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div>Footer
+      <Faq />
+    </div>
+
   )
 }
 
