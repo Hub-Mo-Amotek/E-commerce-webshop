@@ -8,14 +8,14 @@ const LoginPage = () => {
           <h2 className="mb-12 text-center text-5xl font-extrabold">G-BAY</h2>
           <form>
             <div className="mb-4">
-              <label className="block mb-1" htmlFor="email">Email-Address</label>
-              <input id="email" type="text" name="email"
-                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"/>
+              <label className="block mb-1" htmlFor="email" >Email-Address</label>
+              <input id="email" type="text" name="email" placeholder="your_email@here.com"
+                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" required/>
             </div>
             <div className="mb-4">
               <label className="block mb-1" htmlFor="password">Password</label>
-              <input id="password" type="password" name="password"
-                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full"/>
+              <input id="password" type="password" name="password" placeholder="your password"
+                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" required/>
             </div>
             <div className="mt-6">
               <button
