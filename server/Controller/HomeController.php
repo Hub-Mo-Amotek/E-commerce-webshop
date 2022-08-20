@@ -1,7 +1,6 @@
 <?php
 
 
-
 class HomeController {
 
     public function render() {
@@ -29,10 +28,11 @@ class HomeController {
             break;
             case 'GET':
                 $sql = "SELECT * FROM user";
+                echo $_SERVER['REQUEST_URI'];
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);        
-                echo json_encode($users);
+                // echo json_encode($users);
             break;
     
 }
