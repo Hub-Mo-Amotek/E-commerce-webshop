@@ -30,11 +30,9 @@ const LoginPage = () => {
             {/*<div className="mt-6 text-center">
               <a href="#" className="underline">Sign up for an account</a>
             </div>*/}
-
           </form>
         </div>
       </div>
-
     </div>
   )
 }
