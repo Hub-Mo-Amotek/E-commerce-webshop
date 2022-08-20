@@ -38,7 +38,7 @@ const DisplayUser = () => {
                     <td>{user.last_name}</td>
                     <td>{user.email}</td>
                     <td>
-                        <Link to={`user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
+                        <Link to={`/user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
                         <button>delete</button>
                     </td>
                 </tr>
