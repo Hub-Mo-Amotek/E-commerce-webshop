@@ -10,6 +10,8 @@ import LoginPage from "./routes/LoginPage";
 import ResetPasswordPage from "./routes/ResetPasswordPage";
 import SignUpPage from "./routes/SignUpPage";
 import Form from './components/Form';
+import ErrorPage from './routes/ErrorPage';
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route exact path="/category" element={<ProductsPage />} />
           <Route exact path="/cart" element={<CartPage />} />
           <Route exact path="/test-form" element={<Form />} />
+          <Route exact path="*" element={<ErrorPage />} />
         </Routes>
         <Footer />
       </Router>
