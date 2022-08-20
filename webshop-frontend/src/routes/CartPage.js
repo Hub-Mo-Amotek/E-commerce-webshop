@@ -9,13 +9,13 @@ const CartPage = () => {
 
                         <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">
                             {/*products.map((product, productIdx) => (*/
-                                <li /*key={product.id}*/ className="flex py-6 sm:py-10">
+                                <li /*key={product.id}*/ className="flex py-6 sm:py-6">
                                     <div className="flex-shrink-0">
                                         {/*IMAGE*/}
                                         <img
-                                            src="#"/*product.imageSrc*/
+                                            src="./assets/images/pikachu terrarium.jpeg"/*product.imageSrc*/
                                             alt="Pikachu"/*product.imageAlt*/
-                                            className="w-24 h-24 rounded-md object-center object-cover sm:w-20 sm:h-20"
+                                            className="w-14 h-14 object-center object-cover sm:w-28 sm:h-28"
                                         />
                                     </div>
 
@@ -26,7 +26,7 @@ const CartPage = () => {
                                                     <p className="text-sm">
                                                         <a href="#"/*product.href*/
                                                            className="font-medium text-gray-700 hover:text-gray-800">
-                                                            Pikachu{/*product.name*/}
+                                                            Pikachu terrarium{/*product.name*/}
                                                         </a>
                                                     </p>
                                                     {/*PRICE*/}
@@ -56,7 +56,13 @@ const CartPage = () => {
                                                 <div className="absolute top-0 right-0">
                                                     <button type="button"
                                                             className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
-                                                        <span/*className="sr-only"*/>Remove</span>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
+                                                             fill="none" viewBox="0 0 24 24" stroke="red"
+                                                             stroke-width="2">
+                                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                                  d="M6 18L18 6M6 6l12 12"/>
+                                                        </svg>
+                                                        {/*<span/*className="sr-only">Remove</span>*/}
                                                         {/*<XIcon className="h-5 w-5" aria-hidden="true"/>*/}
                                                     </button>
                                                 </div>
