@@ -6,7 +6,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductsPage from './routes/ProductsPage';
 import CartPage from './routes/CartPage';
-
+import LoginPage from "./routes/LoginPage";
+import ResetPasswordPage from "./routes/ResetPasswordPage";
+import SignUpPage from "./routes/SignUpPage";
 
 function App() {
   return (
@@ -15,6 +17,9 @@ function App() {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />} />
+          <Route exact path="/Login" element={<LoginPage />} />
+          <Route exact path="/Password" element={<ResetPasswordPage />} />
+          <Route exact path="/SignUp" element={<SignUpPage />} />
           <Route exact path="/product-detail" element={<ProductDetail />} />
           <Route exact path="/category" element={<ProductsPage />} />
           <Route exact path="/cart" element={<CartPage />} />
