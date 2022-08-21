@@ -20,7 +20,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route exact path="/Login" element={<LoginPage />} />
           <Route exact path="/Password" element={<ResetPasswordPage />} />
           <Route exact path="/SignUp" element={<SignUpPage />} />
