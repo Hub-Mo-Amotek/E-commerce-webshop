@@ -9,6 +9,7 @@ import CartPage from './routes/CartPage';
 import LoginPage from "./routes/LoginPage";
 import ResetPasswordPage from "./routes/ResetPasswordPage";
 import SignUpPage from "./routes/SignUpPage";
+import CheckoutPage from "./routes/CheckoutPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/product-detail" element={<ProductDetail />} />
           <Route exact path="/category" element={<ProductsPage />} />
           <Route exact path="/cart" element={<CartPage />} />
+          <Route exact path="/checkout" element={<CheckoutPage />} />
         </Routes>
         <Footer />
       </Router>
