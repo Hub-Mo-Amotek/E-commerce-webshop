@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom';
 
 const EditUserForm = () => {
+    const navigate = useNavigate();
 
     const [inputs, setInputs] = useState([]);
 
@@ -31,6 +32,7 @@ const EditUserForm = () => {
 
         axios.put(`http://localhost/E-commerce-webshop/server/${id}/edit`, inputs)
         console.log(inputs)
+        // navigate('/');
     }
     
 
@@ -39,19 +41,19 @@ const EditUserForm = () => {
         <h1>edit page</h1>
     <form onSubmit={handleForm}>
         <label>first name</label>
-        <input onChange={handleChange} type="text" name="first_name" ></input>
+        <input value={inputs.first_name} onChange={handleChange} type="text" name="first_name" ></input>
         <br/>
 
         <label>last name</label>
-        <input onChange={handleChange} type="text" name="last_name" ></input>
+        <input value={inputs.last_name} onChange={handleChange} type="text" name="last_name" ></input>
         <br/>
 
         <label>email</label>
-        <input onChange={handleChange} type="text" name="email" ></input>
+        <input value={inputs.email} onChange={handleChange} type="text" name="email" ></input>
         <br/>
 
         <label>password</label>
-        <input onChange={handleChange} type="text" name="password" ></input>
+        <input value={inputs.password} onChange={handleChange} type="text" name="password" ></input>
         <br/>
 
         <button>Edit</button>

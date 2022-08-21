@@ -17,6 +17,13 @@ const DisplayUser = () => {
             setUsers(response.data);
         })
     }
+
+    const deleteUser = (id) => {
+        axios.delete(`http://localhost/E-commerce-webshop/server/${id}/delete`).then(function(response){
+            console.log(response.data);
+            setUsers(response.data);
+        });
+    }
     console.log(users);
   return (
     <div>
@@ -39,7 +46,7 @@ const DisplayUser = () => {
                     <td>{user.email}</td>
                     <td>
                         <Link to={`/user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
-                        <button>delete</button>
+                        <button  onClick={() => deleteUser(user.id)}>delete</button>
                     </td>
                 </tr>
             )}
