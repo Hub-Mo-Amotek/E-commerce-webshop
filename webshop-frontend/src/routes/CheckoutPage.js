@@ -141,12 +141,12 @@ const CheckoutPage = () => {
                             </div>
 
                             {/*--PAYMENT--*/}
-                            <div class="mt-10 border-t border-gray-200 pt-10">
+                            <div class="mt-10 border-t border-gray-200 pt-6 pb-6">
                                 <h2 class="text-lg font-medium text-gray-900">Payment</h2>
                                 {/*--PAYMENT TYPE--*/}
                                 <fieldset class="mt-4">
                                     <legend class="sr-only">Payment type</legend>
-                                    <div class="space-y-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-10">
+                                    <div class="space-y-6 sm:flex sm:items-center sm:space-y-0 sm:space-x-12">
 
                                         {/*--CREDITCARD--*/}
                                         <div class="flex items-center">
@@ -227,7 +227,7 @@ const CheckoutPage = () => {
                     </div>*/}
 
                     {/*PAY NOW BUTTON*/}
-                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
+                    <div className="border-t border-gray-200 py-10 px-4 sm:px-6">
                         <button type="submit"
                                 className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3
                                 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2
