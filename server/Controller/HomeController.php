@@ -66,9 +66,9 @@ class HomeController {
                 $stmt->bindParam(':id', $path[3]);
 
                 if($stmt->execute()) {
-                    $data = ['status' => 1, 'message' => "Deleted successfully"];
+                    $data = ['status' => 1, 'message' => 'Deleted successfully.'];
                 } else {
-                    $data = ['status' => 0, 'message' => "Failed to delete."];
+                    $data = ['status' => 0, 'message' => 'Failed to delete.'];
                 }
                 echo json_encode($data);
             break;
