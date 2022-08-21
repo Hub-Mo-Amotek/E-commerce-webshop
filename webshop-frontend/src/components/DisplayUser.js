@@ -13,7 +13,7 @@ const DisplayUser = () => {
 
     function getUsers() {
         axios.get('http://localhost/E-commerce-webshop/server/').then(function(response) {
-            console.log(response.data);
+            //console.log(response.data);
             setUsers(response.data);
         })
     }

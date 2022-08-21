@@ -29,7 +29,7 @@ const EditUserForm = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost/E-commerce-webshop/server/', inputs)
+        axios.put(`http://localhost/E-commerce-webshop/server/${id}/edit`, inputs)
         console.log(inputs)
     }
     
