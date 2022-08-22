@@ -3,1033 +3,199 @@ import React from 'react'
 const ProductsPage = () => {
     return (
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 mt-2 lg:grid-cols-4 gap-x-4 gap-y-8 p-6">
 
-            {/*Product Card*/}
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                    {/*Preview*/}
-                    <div className="inline relative group h-48">
-                        {/*Thumbnail*/}
-                        <img className="absolute rounded-t object-cover h-full w-full"
-                             src="./assets/images/luffy.jpg"
-                             alt="Product Preview" />
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                        {/*Hover Bar*/}
-                        <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/Ichibansho_Goku.jpg" />
 
-                            {/*Add to Bookmarks Button*/}
-                            <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                                <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                                   title="Add to Bookmarks"></i>
-                            </button>
+                <div className="p-6">
 
-                            {/*Add to Favorites Button */}
-                            <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                                <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                                   title="Add to Favorites"></i>
-                            </button>
-                        </div>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        Dragon Ball Super:
+                        <br/>
+                        <span className="font-normal">Super Hero Ichibansho Goku</span>
+                    </h2>
 
-                    {/*Body*/}
-                    <div className="flex flex-col bg-white rounded-b p-3">
-                        {/*Title*/}
-                        <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                            Monkey D. Luffy
-                        </div>
+                    <p className="text-base font-bold mt-2">
+                        €58.00
+                    </p>
 
-                        {/*Author - Category*/}
-                        <div className="text-xxs text-gray-400 truncate mt-1">
-                            by
-
-                            {/*Author*/}
-                            <a className="font-semibold hover:underline"> Username </a>
-
-                            in
-                            {/*Category*/}
-                            <a className="font-semibold hover:underline"> Figurines </a>
-                        </div>
-
-                        {/*Price*/}
-                        <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                            $23
-                        </div>
-
-                        {/*Body*/}
-                        <div className="flex flex-row mt-2">
-                            {/*Detail Column*/}
-                            <div className="flex flex-col flex-auto">
-                                {/*Rating*/}
-                                <div className="flex flex-row group">
-                                    <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                       title="Worst"></i>
-
-                                    <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                       title="Bad"></i>
-
-                                    <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                       title="Not Bad"></i>
-
-                                    <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                       title="Good"></i>
-
-                                    <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                       title="Awesome"></i>
-
-                                    {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                    {/*    (45)*/}
-                                    {/*</div>*/}
-                                </div>
-                            </div>
-
-                            {/*Button Column*/}
-                            <div className="flex flex-row flex-auto justify-end">
-                                {/*Cart Button*/}
-                                <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                    {/*Icon*/}
-                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                              d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                    </svg>
-                                </a>
-
-                                {/*Preview Link Button*/}
-                                <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                    {/*Icon*/}
-                                    <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                    {/*Text*/}
-                                    <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                        Product details
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
+            </a>
 
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
+                <div className="p-6">
 
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
+
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
+
                 </div>
+            </a>
 
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
+                <div className="p-6">
 
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
 
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
 
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
+                <div className="p-6">
 
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
+
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
+
                 </div>
+            </a>
 
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
+                <div className="p-6">
 
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
 
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
 
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
+                <div className="p-6">
 
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
+
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
+
                 </div>
+            </a>
 
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
+                <div className="p-6">
 
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
 
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
 
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
                 </div>
-            </div>
+            </a>
 
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
+            <a href="/product-detail" className="relative block border border-gray-100">
+                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/luffy.jpg" />
 
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
+                <div className="p-6">
 
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
+                    <h2 className="font-semibold text-sm">
+                        One Piece:
+                        <br/>
+                        <span className="font-normal">Monkey D. Luffy</span>
+                    </h2>
+
+                    <p className="text-base font-bold mt-2">
+                        €26.99
+                    </p>
+
                 </div>
-
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
-
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
-
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
-
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
-
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
-
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
-
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
-
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
-
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
-                </div>
-
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
-
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
-
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
-
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
-
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
-
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
-
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
-
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
-
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
-                </div>
-
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
-
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
-
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
-
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
-
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
-
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="flex flex-col shadow-md cursor-pointer w-96 hover:-translate-y-1 duration-300">
-                {/*Preview*/}
-                <div className="inline relative group h-48">
-                    {/*Thumbnail*/}
-                    <img className="absolute rounded-t object-cover h-full w-full"
-                         src="./assets/images/luffy.jpg"
-                         alt="Product Preview" />
-
-                    {/*Hover Bar*/}
-                    <div className="flex flex-row absolute justify-end
-                    h-16 w-full bottom-0 px-3 space-x-2
-                    bg-none opacity-0 group-hover:opacity-100
-                    group-hover:bg-gradient-to-t from-black/20 via-gray-800/20 to-transparent
-                    transition-all ease-in-out duration-200 delay-100">
-
-                        {/*Add to Bookmarks Button*/}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-playlist-plus text-xl text-gray-200
-                            hover:text-white transition-all duration-200"
-                               title="Add to Bookmarks"></i>
-                        </button>
-
-                        {/*Add to Favorites Button */}
-                        <button className="bg-gray-50/10 rounded-full
-                        px-1 h-9 w-9 my-auto hover:bg-gray-50/20
-                        transition-colors duration-200">
-                            <i className="mdi mdi-heart text-xl text-gray-200 p-1
-                            hover:text-white transition-all duration-200"
-                               title="Add to Favorites"></i>
-                        </button>
-                    </div>
-                </div>
-
-                {/*Body*/}
-                <div className="flex flex-col bg-white rounded-b p-3">
-                    {/*Title*/}
-                    <div className="text-sm font-semibold text-gray-900 hover:underline truncate">
-                        Monkey D. Luffy
-                    </div>
-
-                    {/*Author - Category*/}
-                    <div className="text-xxs text-gray-400 truncate mt-1">
-                        by
-
-                        {/*Author*/}
-                        <a className="font-semibold hover:underline"> Username </a>
-
-                        in
-                        {/*Category*/}
-                        <a className="font-semibold hover:underline"> Figurines </a>
-                    </div>
-
-                    {/*Price*/}
-                    <div className="text-sm text-gray-600 font-bold mt-4 mb-1">
-                        $23
-                    </div>
-
-                    {/*Body*/}
-                    <div className="flex flex-row mt-2">
-                        {/*Detail Column*/}
-                        <div className="flex flex-col flex-auto">
-                            {/*Rating*/}
-                            <div className="flex flex-row group">
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Worst"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Not Bad"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Good"></i>
-
-                                <i className="mdi mdi-star text-xs text-amber-400
-                            hover:text-amber-500 transition-all duration-200"
-                                   title="Awesome"></i>
-
-                                {/*<div className="text-xxs text-gray-400 ml-1 hover:underline">*/}
-                                {/*    (45)*/}
-                                {/*</div>*/}
-                            </div>
-                        </div>
-
-                        {/*Button Column*/}
-                        <div className="flex flex-row flex-auto justify-end">
-                            {/*Cart Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2 mr-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </a>
-
-                            {/*Preview Link Button*/}
-                            <a className="flex text-xs border px-3 my-auto py-2
-                        border-amber-500 group hover:bg-amber-500
-                        rounded-xss
-                        transition-all duration-200">
-
-                                {/*Icon*/}
-                                <i className="mdi mdi-eye-outline text-amber-700
-                            group-hover:text-white delay-100"></i>
-
-                                {/*Text*/}
-                                <div className="text-xxs text-amber-700 font-semibold ml-2
-                            group-hover:text-white delay-100">
-                                    Product details
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            </a>
 
         </div>
 
