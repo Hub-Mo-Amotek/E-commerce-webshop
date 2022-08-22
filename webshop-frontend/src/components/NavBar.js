@@ -9,10 +9,10 @@ export default () => {
 
         // Replace javascript:void(0) path with your path
         const navigation = [
-                { title: "All Products", path: "javascript:void(0)" },
-                { title: "Categories", path: "javascript:void(0)" },
-                { title: "Shopping Cart", path: "javascript:void(0)" },
-                { title: "Sell", path: "javascript:void(0)" }
+                { title: "All Products", path: "/" },
+                { title: "Categories", path: "/" },
+                { title: "Shopping Cart", path: "/cart" },
+                { title: "Sell", path: "/" }
         ]
 
         useEffect(() => {
@@ -38,7 +38,7 @@ export default () => {
             <nav ref={navRef} className="bg-white w-full top-0 z-20">
                     <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
                             <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
-                                    <a href="javascript:void(0)">
+                                    <a href="/">
                                             <img
                                                 src="../assets/images/images.png"
                                                 width={120}
@@ -68,17 +68,17 @@ export default () => {
                                     <div>
                                             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
                                                     <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
-                                                            <a href="javascript:void(0)" className="text-gray-600 hover:text-indigo-600">
+                                                            <a href="/" className="text-gray-600 hover:text-indigo-600">
                                                                     Contact
                                                             </a>
                                                     </li>
                                                     <li className="mt-4 lg:mt-0">
-                                                            <a href="javascript:void(0)" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
+                                                            <a href="/Login" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
                                                                     Login
                                                             </a>
                                                     </li>
                                                     <li className="mt-8 lg:mt-0">
-                                                            <a href="javascript:void(0)" className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline">
+                                                            <a href="/SignUp" className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline">
                                                                     Sign Up
                                                             </a>
                                                     </li>
