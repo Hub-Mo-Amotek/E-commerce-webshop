@@ -16,12 +16,18 @@ ini_set('display_errors', 1);
         $dotenv->load();
 
     // requiring the models and controllers
-    require 'Controller/HomeController.php';
     require 'Model/DataConnection.php';
+    require 'Model/RegisterUser.php';
+    require 'Controller/HomeController.php';
+
+
 
 
     // here we are calling the render function inside the home controller
     $HomeController = new HomeController();
     $HomeController->render();
+    $register = new RegisterUser();
+    $register->render();
+
 
 
