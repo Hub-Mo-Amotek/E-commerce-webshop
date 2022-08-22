@@ -10,9 +10,9 @@ export default () => {
         // Replace javascript:void(0) path with your path
         const navigation = [
                 { title: "All Products", path: "javascript:void(0)" },
-                { title: "Categories", path: "javascript:void(0)" },
-                { title: "Shopping Cart", path: "javascript:void(0)" },
-                { title: "Sell", path: "javascript:void(0)" }
+                //{ title: "Categories", path: "javascript:void(0)" },
+                //{ title: "Shopping Cart", path: "javascript:void(0)" },
+                //{ title: "Sell", path: "javascript:void(0)" }
         ]
 
         useEffect(() => {
@@ -68,8 +68,26 @@ export default () => {
                                     <div>
                                             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
                                                     <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
+                                                            <div className="mt-4 sm:mt-0 sm:pr-9">
+                                                                    <label className="sr-only">Categories</label>
+                                                                    <select
+                                                                        className="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                                    >
+                                                                            {/*Categories*/}
+                                                                            <option value={1}>Categories</option>
+                                                                            <option value={2}>1</option>
+                                                                            <option value={3}>2</option>
+                                                                            <option value={4}>3</option>
+                                                                            <option value={5}>4</option>
+                                                                            <option value={6}>5</option>
+                                                                            <option value={7}>6</option>
+                                                                            <option value={8}>7</option>
+                                                                    </select>
+                                                            </div>
+                                                    </li>
+                                                    <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
                                                             <a href="javascript:void(0)" className="text-gray-600 hover:text-indigo-600">
-                                                                    Contact
+                                                                    Sell
                                                             </a>
                                                     </li>
                                                     <li className="mt-4 lg:mt-0">
@@ -80,6 +98,12 @@ export default () => {
                                                     <li className="mt-8 lg:mt-0">
                                                             <a href="javascript:void(0)" className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline">
                                                                     Sign Up
+                                                            </a>
+                                                    </li>
+                                                    <li className="mt-8 lg:mt-0">
+                                                            <a href="javascript:void(0)" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
+                                                                <img src="../assets/images/cart.png" width="50"
+                                                                     height="50"/>
                                                             </a>
                                                     </li>
                                             </ul>
