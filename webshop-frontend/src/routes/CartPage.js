@@ -1,4 +1,7 @@
 const CartPage = () => {
+    function handleRemove() {
+        // remove item
+    }
     return (
         <div className="cartPage">
             <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -54,7 +57,7 @@ const CartPage = () => {
                                                 </select>
 
                                                 <div className="absolute top-0 right-0">
-                                                    <button type="button"
+                                                    <button type="button"  onClick={handleRemove}
                                                             className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
                                                              fill="none" viewBox="0 0 24 24" stroke="red"
@@ -62,8 +65,6 @@ const CartPage = () => {
                                                             <path strokeLinecap="round" strokeLinejoin="round"
                                                                   d="M6 18L18 6M6 6l12 12"/>
                                                         </svg>
-                                                        {/*<span/*className="sr-only">Remove</span>*/}
-                                                        {/*<XIcon className="h-5 w-5" aria-hidden="true"/>*/}
                                                     </button>
                                                 </div>
                                             </div>
