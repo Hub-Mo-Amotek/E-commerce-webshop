@@ -75,13 +75,11 @@ export default () => {
                                                                     >
                                                                             {/*Categories*/}
                                                                             <option value={1}>Categories</option>
-                                                                            <option value={2}>1</option>
-                                                                            <option value={3}>2</option>
-                                                                            <option value={4}>3</option>
-                                                                            <option value={5}>4</option>
-                                                                            <option value={6}>5</option>
-                                                                            <option value={7}>6</option>
-                                                                            <option value={8}>7</option>
+                                                                            <option value={2}>XBox</option>
+                                                                            <option value={3}>PlayStation</option>
+                                                                            <option value={4}>Games</option>
+                                                                            <option value={5}>Gaming Accessories</option>
+                                                                            <option value={6}>Other</option>
                                                                     </select>
                                                             </div>
                                                     </li>
