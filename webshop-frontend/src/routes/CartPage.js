@@ -1,20 +1,19 @@
-import React,{useState} from "react";
+import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
 const CartPage = () => {
-
-
+    //TODO: The cart updates automatically when user deletes or changes quantity.
     //at the same time the subtotal in the order summary will be equal to the price of that product.
     //the shipping cost wil be displayed underneath.
-    //if the seller is the same person the shipping cost will not add-up when adding more of his products.
     //The order-total is equal to the subtitle + shipping (costs).
-
+    //TODO: if the seller is the same person the shipping cost will not add-up when adding more of his products.
+    //TODO: When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
     //TODO-1 When the user clicks on "add to cart" the item with that specific product.id will be added to the cart(1 piece only).
     //id + imageSrc + imageAlt + name + price + shipping cost + quantity (=1)
     const productsInCartList = [
         {
             id: 111,
             imageAlt: 'Pikachu',
-            imageSrc:'#',
+            imageSrc: '#',
             name: 'pikachu',
             price: 111,
             shippingCost: 111,
@@ -23,7 +22,7 @@ const CartPage = () => {
         {
             id: 211,
             imageAlt: 'Lala',
-            imageSrc:'#',
+            imageSrc: '#',
             name: 'lala',
             price: 211,
             shippingCost: 111,
@@ -32,16 +31,18 @@ const CartPage = () => {
     ];
 
     //TODO: DONE--In order to modify the list, we need to use the useState Hook:
-    const [products, setProducts] = useState(productsInCartList);
-    console.log ("products: " ,products)
+    let [products, setProducts] = useState(productsInCartList);
+    console.log("products: ", products)
 
-    //TODO: DONE--When the user click on the remove-button, the item with that specific product.id will be removed from the cart.
+    //TODO: DOING--When the user clicks on the remove-button, the item with that specific product.id will be removed from
+    //the cart and the price and shipping-cost will be updated in the order-summary.
     //the id will be filtered out of the list and a new list will be displayed.
-    function handleRemove(id) { //line 78 = delete-button
+    function handleRemove(id) { //= delete-button
         const newProducts = products.filter((product) => product.id !== id);
-        setProducts(newProducts);//state not updating?  LOOK HERE!
+        setProducts(newProducts); //TODO: the state will not update  LOOK HERE!
+
     }
-    console.log("newProducts: " ,newProducts)
+
     return (
         <div className="cartPage">
             <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -68,14 +69,14 @@ const CartPage = () => {
                                             <div className="flex justify-between">
                                                 {/*NAME*/}
                                                 <p className="text-sm">
-                                                        <a href="#"/*product.href*/
-                                                           className="font-medium text-gray-700 hover:text-gray-800">
-                                                            {product.name}
-                                                        </a>
-                                                    </p>
-                                                    {/*PRICE*/}
-                                                    <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
-                                                </div>
+                                                    <a href="#"/*product.href*/
+                                                       className="font-medium text-gray-700 hover:text-gray-800">
+                                                        {product.name}
+                                                    </a>
+                                                </p>
+                                                {/*PRICE*/}
+                                                <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
+                                            </div>
                                             {/*QUANTITY & REMOVE*/}
                                             <div className="mt-4 sm:mt-0 sm:pr-9">
                                                 {/*QUANTITY*/}
@@ -98,7 +99,7 @@ const CartPage = () => {
                                                 </select>
                                                 {/*REMOVE*/}
                                                 <div className="absolute top-0 right-0">
-                                                    <button type="button"  onClick={() => handleRemove(products.id)}
+                                                    <button type="button" onClick={() => handleRemove(product.id)}
                                                             className="-m-2 p-2 inline-flex text-gray-400 hover:text-gray-500">
                                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
                                                              fill="none" viewBox="0 0 24 24" stroke="red"
@@ -112,7 +113,7 @@ const CartPage = () => {
                                         </div>
                                     </div>
                                 </li>
-                           ))}
+                            ))}
                         </ul>
                     </section>
 
