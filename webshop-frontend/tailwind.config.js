@@ -9,6 +9,9 @@ module.exports = {
       //example
       // nighty: "#121063",
       // whity: "#ffffff",
+      "color-one": "#60a3a7",
+      "color-two": "#f5efef",
+
     },
   },
   plugins: [],
