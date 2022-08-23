@@ -1,6 +1,16 @@
 import React from 'react'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
+
+  let navigate = useNavigate();
+
+  const [user, setUser] = useState({email:'', password:''});
+
+  const handleChange = (e) => {
+      setUser({...user, [e.target.name]: e.target.value})
+  }
   return (
     <div>
       <div className="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
@@ -8,14 +18,28 @@ const LoginPage = () => {
           <h2 className="mb-12 text-center text-5xl font-extrabold">G-BAY</h2>
           <form>
             <div className="mb-4">
-              <label className="block mb-1" htmlFor="email" >Email-Address</label>
-              <input id="email" type="text" name="email" placeholder="your_email@here.com"
-                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" required/>
+              <label className="block mb-1" htmlFor="email" >Email</label>
+              <input 
+              id="email" 
+              type="text" 
+              name="email" 
+              placeholder="your_email@here.com"
+              className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" 
+              onChange={handleChange}
+              value={user.email}
+              required/>
             </div>
             <div className="mb-4">
               <label className="block mb-1" htmlFor="password">Password</label>
-              <input id="password" type="password" name="password" placeholder="your password"
-                     className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" required/>
+              <input 
+              id="password" 
+              type="password" 
+              name="password" 
+              placeholder="your password"
+              className="py-2 px-3 border border-gray-300 focus:border-red-300 focus:outline-none focus:ring focus:ring-red-200 focus:ring-opacity-50 rounded-md shadow-sm disabled:bg-gray-100 mt-1 block w-full" 
+              onChange={handleChange}
+              value={user.password}
+              required/>
             </div>
             <div className="mt-6">
               <button

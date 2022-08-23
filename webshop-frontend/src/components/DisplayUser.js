@@ -31,7 +31,7 @@ const DisplayUser = () => {
             window.location.reload(false);
         });
     }
-    console.log(users)
+    //console.log(users)
   return (
     <div>
     <h1>List Users</h1>
