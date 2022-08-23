@@ -1,19 +1,23 @@
 import React from 'react'
 import { useEffect, useRef, useState } from 'react'
-
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import Dropdown from './Dropdowncomp';
 
 export default () => {
 
+        let navigate = useNavigate();
         const [state, setState] = useState(false)
         const navRef = useRef()
 
         // Replace javascript:void(0) path with your path
         const navigation = [
-                { title: "All Products", path: "/all-products" },
+                { title: "All Products", path: "/" },
                 //{ title: "Categories", path: "javascript:void(0)" },
                 //{ title: "Shopping Cart", path: "javascript:void(0)" },
                 //{ title: "Sell", path: "javascript:void(0)" }
         ]
+
+
 
         useEffect(() => {
 
@@ -66,55 +70,9 @@ export default () => {
                             </div>
                             <div className={`flex-1 justify-between flex-row-reverse lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${ state ? 'h-screen pb-20 overflow-auto pr-4' : 'hidden'}`}>
                                     <div>
+
                                             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
-                                                    <div className="relative inline-block text-left">
-                                                            <div>
-                                                                    <button type="button"
-                                                                            className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
-                                                                            id="menu-button" aria-expanded="false"
-                                                                            aria-haspopup="true">
-                                                                            Categories
-                                                                            <svg className="-mr-1 ml-2 h-5 w-5"
-                                                                                 xmlns="http://www.w3.org/2000/svg"
-                                                                                 viewBox="0 0 20 20" fill="currentColor"
-                                                                                 aria-hidden="true">
-                                                                                    <path fill-rule="evenodd"
-                                                                                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                                                          clip-rule="evenodd"/>
-                                                                            </svg>
-                                                                    </button>
-                                                            </div>
-
-
-                                                            <div
-                                                                className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                                                                role="menu" aria-orientation="vertical"
-                                                                aria-labelledby="menu-button" tabIndex="-1">
-                                                                    <div className="py-1" role="none">
-
-                                                                            <a href="/category"
-                                                                               className="text-gray-700 block px-4 py-2 text-sm"
-                                                                               role="menuitem" tabIndex="-1"
-                                                                               id="menu-item-0">XBox</a>
-                                                                            <a href="/category"
-                                                                               className="text-gray-700 block px-4 py-2 text-sm"
-                                                                               role="menuitem" tabIndex="-1"
-                                                                               id="menu-item-1">PlayStation</a>
-                                                                            <a href="/category"
-                                                                               className="text-gray-700 block px-4 py-2 text-sm"
-                                                                               role="menuitem" tabIndex="-1"
-                                                                               id="menu-item-2">Games</a>
-                                                                            <a href="/category"
-                                                                               className="text-gray-700 block px-4 py-2 text-sm"
-                                                                               role="menuitem" tabIndex="-1"
-                                                                               id="menu-item-2">Gameing Accessories</a>
-                                                                            <a href="/category"
-                                                                               className="text-gray-700 block px-4 py-2 text-sm"
-                                                                               role="menuitem" tabIndex="-1"
-                                                                               id="menu-item-2">Other</a>
-                                                                    </div>
-                                                            </div>
-                                                    </div>
+                                                    <Dropdown />
                                                     <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
                                                             <a href="/" className="text-gray-600 hover:text-indigo-600">
                                                                     Sell
