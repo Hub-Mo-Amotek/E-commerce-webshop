@@ -42,9 +42,9 @@ export default () => {
             <nav ref={navRef} className="bg-white w-full top-0 z-20">
                     <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
                             <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
-                                    <a href="javascript:void(0)">
+                                    <a href="/">
                                             <img
-                                                src="../assets/images/gbay-logo.png"
+                                                src={require('../assets/images/gbay-logo.png')}
                                                 width={120}
                                                 height={50}
                                                 alt="Logo Icon"
@@ -90,7 +90,7 @@ export default () => {
                                                     </li>
                                                     <li className="mt-8 lg:mt-0">
                                                             <a href="/cart" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
-                                                                <img src="../assets/images/cart.png" alt="cart" width="50"
+                                                                <img src={require('../assets/images/cart.png')} alt="cart" width="50"
                                                                      height="50"/>
                                                             </a>
                                                     </li>

@@ -1,25 +1,34 @@
-import React from "react";
+import React, {useState} from "react";
 import { createPopper } from "@popperjs/core";
+import {usePopper} from "react-popper";
 
 const Dropdown = ({ color }) => {
     // dropdown props
     const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
     const btnDropdownRef = React.createRef();
     const popoverDropdownRef = React.createRef();
-    const openDropdownPopover = () => {
-        createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
-            placement: "bottom-start"
-        });
-        setDropdownPopoverShow(true);
-    };
-    const closeDropdownPopover = () => {
-        setDropdownPopoverShow(false);
-    };
-    // bg colors
-    let bgColor;
-    color === "white"
-        ? (bgColor = "bg-slate-700")
-        : (bgColor = "bg-" + color + "-500");
+
+
+    const bgColor = "white";
+
+
+     const toggleDropdown = () => {
+         setDropdownPopoverShow(!dropdownPopoverShow) ;
+         createPopper(btnDropdownRef.current, popoverDropdownRef.current, {
+             placement: "bottom-start",
+             strategy: "absolute",
+                 modifiers: [
+                 {
+                     name: 'computeStyles',
+                     options: {
+                         gpuAcceleration: false, // true by default
+                     },
+                 },
+             ],
+         });
+
+    }
+
     return (
         <>
             <div className="flex flex-wrap">
@@ -33,9 +42,10 @@ const Dropdown = ({ color }) => {
                             type="button"
                             ref={btnDropdownRef}
                             onClick={() => {
-                                dropdownPopoverShow
-                                    ? closeDropdownPopover()
-                                    : openDropdownPopover();
+                                toggleDropdown();
+                                // dropdownPopoverShow
+                                //     ? closeDropdownPopover()
+                                //     : openDropdownPopover();
                             }}
                         >
                             {color === "white" ? "Categories" : color + " Dropdown"}
@@ -44,7 +54,7 @@ const Dropdown = ({ color }) => {
                             ref={popoverDropdownRef}
                             className={
                                 (dropdownPopoverShow ? "block " : "hidden ") +
-                                (color === "white" ? "bg-white " : bgColor + " ") +
+                                //(color === "white" ? "bg-white " : bgColor + " ") +
                                 "text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1"
                             }
                             style={{ minWidth: "12rem" }}
@@ -52,8 +62,8 @@ const Dropdown = ({ color }) => {
                             <a
                                 href="/category"
                                 className={
-                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                                    (color === "white" ? " text-slate-700" : "text-white")
+                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
+                                    //(color === "white" ? " text-slate-700" : "text-white")
                                 }
                             >
                                 XBox
@@ -61,8 +71,8 @@ const Dropdown = ({ color }) => {
                             <a
                                 href="/category"
                                 className={
-                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                                    (color === "white" ? " text-slate-700" : "text-white")
+                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
+                                    //(color === "white" ? " text-slate-700" : "text-white")
                                 }
                             >
                                 PlayStation
@@ -70,8 +80,8 @@ const Dropdown = ({ color }) => {
                             <a
                                 href="/category"
                                 className={
-                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                                    (color === "white" ? " text-slate-700" : "text-white")
+                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
+                                    //(color === "white" ? " text-slate-700" : "text-white")
                                 }
                             >
                                 Games
@@ -79,8 +89,8 @@ const Dropdown = ({ color }) => {
                             <a
                                 href="/category"
                                 className={
-                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                                    (color === "white" ? " text-slate-700" : "text-white")
+                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
+                                    //(color === "white" ? " text-slate-700" : "text-white")
                                 }
                             >
                                 Gaming Accessories
@@ -88,8 +98,8 @@ const Dropdown = ({ color }) => {
                             <a
                                 href="/category"
                                 className={
-                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent " +
-                                    (color === "white" ? " text-slate-700" : "text-white")
+                                    "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent "
+                                    //(color === "white" ? " text-slate-700" : "text-white")
                                 }
                             >
                                 Other
