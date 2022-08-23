@@ -44,7 +44,7 @@ export default () => {
                             <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
                                     <a href="javascript:void(0)">
                                             <img
-                                                src="../assets/images/images.png"
+                                                src="../assets/images/gbay-logo.png"
                                                 width={120}
                                                 height={50}
                                                 alt="Logo Icon"
