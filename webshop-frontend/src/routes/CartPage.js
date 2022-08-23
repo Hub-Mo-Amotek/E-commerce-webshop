@@ -2,19 +2,16 @@ import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
 
 const CartPage = () => {
-    //TODO-1 When the user clicks on "add to cart" the item with that specific product.id will be added to the cart(1 piece only).
-    //id + imageSrc + imageAlt + name + price + shipping cost + quantity (=1)
     //TODO: shipping cost.
     //TODO: order-total.
     //TODO: proceed to checkout
-
 
     //PRODUCTS-IN CART
     const productsInCartList = [
         {
             id: 111,
             imageAlt: 'Pikachu',
-            imageSrc: '#',
+            imageSrc: './assets/images/gokupng.png',
             name: 'pikachu',
             price: 111,
             shippingCost: 111,
@@ -23,7 +20,7 @@ const CartPage = () => {
         {
             id: 211,
             imageAlt: 'Lala',
-            imageSrc: '#',
+            imageSrc: './assets/images/gokupng.png',
             name: 'lala',
             price: 211,
             shippingCost: 111,
@@ -31,51 +28,60 @@ const CartPage = () => {
         }
     ];
     //QUANTITY-OPTIONS:
-    const options= [
-        {label:1,value:1},
-        {label:2,value:2},
-        {label:3,value:3},
-        {label:4,value:4},
-        {label:5,value:5},
-        {label:6,value:6},
-        {label:7,value:7},
-        {label:8,value:8},
+    const options = [
+        {label: 1, value: 1},
+        {label: 2, value: 2},
+        {label: 3, value: 3},
+        {label: 4, value: 4},
+        {label: 5, value: 5},
+        {label: 6, value: 6},
+        {label: 7, value: 7},
+        {label: 8, value: 8},
     ]
 
     //In order to remove items from the list, we need to use the useState Hook:
     let [products, setProducts] = useState(productsInCartList);
+    //In order to access the selected and to control it we need to use the useState Hook:
+    let [selected, setSelected] = useState(1);
 
     //When the user clicks on the remove-button, the item with that specific product.id will be removed from the cart.
     //the id will be filtered out of the list and a new list will be displayed.
     function handleRemove(id) {
         const newProducts = products.filter((product) => product.id !== id);
-        setProducts(newProducts); //TODO: if the state doesn't update???  LOOK HERE!
+        setProducts([...newProducts]); //spread-operator om react duidelijk te maken dat state aangepast is met nieuwe array
     }
 
-    //TODO: the price  will be updated in the order-summary.
-    let [subtotal, setSubtotal] = useState(products.price * products.quantity)
-    function handleSubtotal(products) {
+    //the price  will be updated in the order-summary.
+    let [subtotal, setSubtotal] = useState(0)
+
+    function handleSubtotal() {
         if (products.length === 0) {
-            return subtotal;
+            setSubtotal = 0;
         } else {
+            let tempSubtotal = 0;
             products.forEach((product) => {
-                setSubtotal += product.price * product.quantity;
-                console.log("subtotal",product.quantity) //TODO: update when quantity changes!!!!
-                setSubtotal(subtotal)
+                tempSubtotal += product.price * product.quantity;
             })
+            setSubtotal(tempSubtotal)
         }
     }
 
-    //In order to access the selected and to control it we need to use the useState Hook:
-    let [selected, setSelected] = useState(1);
-    //TODO: When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
+    //When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
     const handleChange = event => {
-            setSelected(event.target.value);
-            console.log("handleChange: ",event.target.value);
+        setSelected(event.target.value);
+        const newProducts = [];
+        products.forEach(product => {
+            if (product.id == event.target.name) {
+                product.quantity = event.target.value
+                newProducts.push(product);
+            } else {
+                newProducts.push(product);
+            }
+        })
+        setProducts([...newProducts])
+        handleSubtotal();
     };
-
-    useEffect()//when handlechange.
-
+    
     return (
         <div className="cartPage">
             <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -83,7 +89,6 @@ const CartPage = () => {
                 <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
                 <form className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
                     <section aria-labelledby="cart-heading" className="lg:col-span-7">
-
                         <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">
                             {products.map((product, key) => (
                                 <li key={key} className="flex py-6 sm:py-6">
@@ -113,16 +118,13 @@ const CartPage = () => {
                                             {/*QUANTITY & REMOVE*/}
                                             <div className="mt-4 sm:mt-0 sm:pr-9">
                                                 {/*QUANTITY*/}
-                                                <label /*htmlFor={`quantity-${productIdx}`}*/ className="sr-only">
-                                                    {/*quantity, {product.name}*/}
-                                                </label>
+                                                <label className="sr-only"></label>
                                                 <select
-                                                    /*id={`quantity-${productIdx}`}*/
-                                                    /*name={`quantity-${productIdx}`}*/
                                                     className="max-w-full rounded-md border border-gray-300 py-1.5
                                                     text-base leading-5 font-medium text-gray-700 text-left shadow-sm
                                                     focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500
-                                                    sm:text-sm" value={selected} onChange={handleChange}>
+                                                    sm:text-sm" value={product.quantity} onChange={handleChange}
+                                                    name={product.id}>
 
                                                     {options.map((option) => (
                                                         <option value={option.value}>{option.label}</option>
@@ -161,7 +163,7 @@ const CartPage = () => {
                         <dl className="mt-6 space-y-4">
                             <div className="flex items-center justify-between">
                                 <dt className="text-sm text-gray-600">Subtotal</dt>
-                                <dd className="text-sm font-medium text-gray-900">{handleSubtotal(products)}</dd>
+                                <dd className="text-sm font-medium text-gray-900">{subtotal}</dd>
                             </div>
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="flex items-center text-sm text-gray-600">
