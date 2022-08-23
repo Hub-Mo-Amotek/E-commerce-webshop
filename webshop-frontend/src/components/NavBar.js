@@ -90,7 +90,7 @@ export default () => {
                                                     </li>
                                                     <li className="mt-8 lg:mt-0">
                                                             <a href="/cart" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
-                                                                <img src="../assets/images/cart.png" width="50"
+                                                                <img src="../assets/images/cart.png" alt="cart" width="50"
                                                                      height="50"/>
                                                             </a>
                                                     </li>
