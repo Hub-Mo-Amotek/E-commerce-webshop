@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
+
 const CartPage = () => {
-    //TODO: The cart updates automatically when user deletes or changes quantity.
-    //at the same time the subtotal in the order summary will be equal to the price of that product.
-    //the shipping cost wil be displayed underneath.
-    //The order-total is equal to the subtitle + shipping (costs).
-    //TODO: if the seller is the same person the shipping cost will not add-up when adding more of his products.
-    //TODO: When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
     //TODO-1 When the user clicks on "add to cart" the item with that specific product.id will be added to the cart(1 piece only).
     //id + imageSrc + imageAlt + name + price + shipping cost + quantity (=1)
+    //TODO: shipping cost.
+    //TODO: order-total.
+    //TODO: proceed to checkout
+
+
+    //PRODUCTS-IN CART
     const productsInCartList = [
         {
             id: 111,
@@ -29,19 +30,51 @@ const CartPage = () => {
             quantity: 1,
         }
     ];
+    //QUANTITY-OPTIONS:
+    const options= [
+        {label:1,value:1},
+        {label:2,value:2},
+        {label:3,value:3},
+        {label:4,value:4},
+        {label:5,value:5},
+        {label:6,value:6},
+        {label:7,value:7},
+        {label:8,value:8},
+    ]
 
-    //TODO: DONE--In order to modify the list, we need to use the useState Hook:
+    //In order to remove items from the list, we need to use the useState Hook:
     let [products, setProducts] = useState(productsInCartList);
-    console.log("products: ", products)
 
-    //TODO: DOING--When the user clicks on the remove-button, the item with that specific product.id will be removed from
-    //the cart and the price and shipping-cost will be updated in the order-summary.
+    //When the user clicks on the remove-button, the item with that specific product.id will be removed from the cart.
     //the id will be filtered out of the list and a new list will be displayed.
-    function handleRemove(id) { //= delete-button
+    function handleRemove(id) {
         const newProducts = products.filter((product) => product.id !== id);
-        setProducts(newProducts); //TODO: the state will not update  LOOK HERE!
-
+        setProducts(newProducts); //TODO: if the state doesn't update???  LOOK HERE!
     }
+
+    //TODO: the price  will be updated in the order-summary.
+    let [subtotal, setSubtotal] = useState(products.price * products.quantity)
+    function handleSubtotal(products) {
+        if (products.length === 0) {
+            return subtotal;
+        } else {
+            products.forEach((product) => {
+                setSubtotal += product.price * product.quantity;
+                console.log("subtotal",product.quantity) //TODO: update when quantity changes!!!!
+                setSubtotal(subtotal)
+            })
+        }
+    }
+
+    //In order to access the selected and to control it we need to use the useState Hook:
+    let [selected, setSelected] = useState(1);
+    //TODO: When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
+    const handleChange = event => {
+            setSelected(event.target.value);
+            console.log("handleChange: ",event.target.value);
+    };
+
+    useEffect()//when handlechange.
 
     return (
         <div className="cartPage">
@@ -86,16 +119,15 @@ const CartPage = () => {
                                                 <select
                                                     /*id={`quantity-${productIdx}`}*/
                                                     /*name={`quantity-${productIdx}`}*/
-                                                    className="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                                                >
-                                                    <option value={1}>1</option>
-                                                    <option value={2}>2</option>
-                                                    <option value={3}>3</option>
-                                                    <option value={4}>4</option>
-                                                    <option value={5}>5</option>
-                                                    <option value={6}>6</option>
-                                                    <option value={7}>7</option>
-                                                    <option value={8}>8</option>
+                                                    className="max-w-full rounded-md border border-gray-300 py-1.5
+                                                    text-base leading-5 font-medium text-gray-700 text-left shadow-sm
+                                                    focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500
+                                                    sm:text-sm" value={selected} onChange={handleChange}>
+
+                                                    {options.map((option) => (
+                                                        <option value={option.value}>{option.label}</option>
+                                                    ))}
+
                                                 </select>
                                                 {/*REMOVE*/}
                                                 <div className="absolute top-0 right-0">
@@ -129,7 +161,7 @@ const CartPage = () => {
                         <dl className="mt-6 space-y-4">
                             <div className="flex items-center justify-between">
                                 <dt className="text-sm text-gray-600">Subtotal</dt>
-                                <dd className="text-sm font-medium text-gray-900">€30.00</dd>
+                                <dd className="text-sm font-medium text-gray-900">{handleSubtotal(products)}</dd>
                             </div>
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="flex items-center text-sm text-gray-600">
