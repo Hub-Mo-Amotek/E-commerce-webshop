@@ -1,11 +1,8 @@
 <?php
 
-class HomeController {
+class HomeController extends DataConnection {
 
     public function render() {
-
-        $connection = new DataConnection();
-        $db = $connection->connect();
 
             $method = $_SERVER['REQUEST_METHOD'];
     switch($method){
@@ -14,12 +11,12 @@ class HomeController {
             $path = explode('/', $_SERVER['REQUEST_URI']);
             if(isset($path[3]) && is_numeric($path[3])) {
                 $sql .= " WHERE id = :id";
-                $stmt = $db->prepare($sql);
+                $stmt = $this->connect()->prepare($sql);
                 $stmt->bindParam(':id', $path[3]);
                 $stmt->execute();
                 $users = $stmt->fetch(PDO::FETCH_ASSOC);
             } else {
-                $stmt = $db->prepare($sql);
+                $stmt = $this->connect()->prepare($sql);
                 $stmt->execute();
                 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
             }
@@ -44,7 +41,7 @@ class HomeController {
         case 'PUT':
             $user = json_decode(file_get_contents('php://input'));
             $sql = "UPDATE user SET first_name = :first_name, last_name = :last , email = :email, password = :password WHERE id = :id";
-            $stmt = $db->prepare($sql);
+            $stmt = $this->connect()->prepare($sql);
             $date = date('Y-m-d');
             $stmt->bindParam(':id', $user->id);
             $stmt->bindParam(':first_name', $user->first_name);
@@ -62,7 +59,7 @@ class HomeController {
             $sql = "DELETE FROM user WHERE id = :id";
             $path = explode('/', $_SERVER['REQUEST_URI']);
             
-                $stmt = $db->prepare($sql);
+                $stmt = $this->connect()->prepare($sql);
                 $stmt->bindParam(':id', $path[3]);
 
                 if($stmt->execute()) {

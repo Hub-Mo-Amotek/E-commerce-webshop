@@ -15,8 +15,8 @@ const SignUpPage = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost/E-commerce-webshop/server/', inputs)
-        console.log(inputs)
+        axios.post('http://localhost/E-commerce-webshop/server/Model/User.php', inputs)
+        //console.log(inputs)
     }
     return (
             <div className="bg-grey-lighter min-h-screen flex flex-col">
