@@ -9,8 +9,8 @@ module.exports = {
       //example
       // nighty: "#121063",
       // whity: "#ffffff",
-      "color-one": "#60a3a7",
-      "color-two": "#f5efef",
+      "color-one": "#30cfd0",
+      "color-two": "#330867",
 
     },
   },
