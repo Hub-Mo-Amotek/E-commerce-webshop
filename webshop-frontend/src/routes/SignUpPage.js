@@ -1,29 +1,59 @@
+import { useState } from "react";
+import axios from "axios";
+
+
 const SignUpPage = () => {
+
+    const [inputs, setInputs] = useState([]);
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}));
+    }
+
+    const handleForm = (e) => {
+        e.preventDefault();
+
+        axios.post('http://localhost/E-commerce-webshop/server/Model/User.php', inputs)
+        //console.log(inputs)
+    }
     return (
             <div className="bg-grey-lighter min-h-screen flex flex-col">
                 <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                    <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <form onSubmit={handleForm} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                         <h1 className="mb-8 text-3xl text-center">Sign up</h1>
 
                         <input
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
+                            name="first_name"
+                            placeholder="first name" onChange={handleChange} />
+
+                        <input
+                            type="text"
+                            className="block border border-grey-light w-full p-3 rounded mb-4"
+                            name="last_name"
+                            placeholder="last name" onChange={handleChange} />
+
+                        <input
+                            type="text"
+                            className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="email"
-                            placeholder="Email" required/>
+                            placeholder="Email" onChange={handleChange} />
 
                         <input
                             type="password"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="password"
-                            placeholder="Password" required/>
+                            placeholder="Password" onChange={handleChange} />
                         <input
                             type="password"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="confirm_password"
-                            placeholder="Confirm Password" required/>
+                            placeholder="Confirm Password"/>
 
                         <button
-                            type="submit"
                             className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
                         >Create Account
                         </button>
@@ -37,7 +67,7 @@ const SignUpPage = () => {
                                 Privacy Policy
                             </a>
                         </div>*/}
-                    </div>
+                    </form>
                 </div>
             </div>
     )
