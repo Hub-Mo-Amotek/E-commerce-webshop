@@ -12,46 +12,60 @@ const SignUpPage = () => {
         setInputs(values => ({...values, [name]: value}));
     }
 
-    const handleForm = (e) => {
+    const checkPassword = (e) =>{
         e.preventDefault();
 
+        if(inputs.password === inputs.confirm_password){
+            handleForm();
+        }else{
+            alert('the password doesnt match')
+        }
+    }
+
+    const handleForm = () => {
+
         axios.post('http://localhost/E-commerce-webshop/server/Model/User.php', inputs)
-        //console.log(inputs)
+        console.log(inputs)
     }
     return (
             <div className="bg-grey-lighter min-h-screen flex flex-col">
                 <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-                    <form onSubmit={handleForm} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                    <form onSubmit={checkPassword} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                         <h1 className="mb-8 text-3xl text-center">Sign up</h1>
 
                         <input
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="first_name"
-                            placeholder="first name" onChange={handleChange} />
+                            placeholder="first name" 
+                            onChange={handleChange} />
 
                         <input
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="last_name"
-                            placeholder="last name" onChange={handleChange} />
+                            placeholder="last name" 
+                            onChange={handleChange} />
 
                         <input
                             type="text"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="email"
-                            placeholder="Email" onChange={handleChange} />
+                            placeholder="Email" 
+                            onChange={handleChange} />
 
                         <input
                             type="password"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="password"
-                            placeholder="Password" onChange={handleChange} />
+                            placeholder="Password" 
+                            onChange={handleChange} />
                         <input
                             type="password"
                             className="block border border-grey-light w-full p-3 rounded mb-4"
                             name="confirm_password"
-                            placeholder="Confirm Password"/>
+                            placeholder="Confirm Password"
+                            onChange={handleChange} />
 
                         <button
                             className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
