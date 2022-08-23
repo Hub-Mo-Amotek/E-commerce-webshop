@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
+import DisplayUser from './DisplayUser'
 
 const Form = () => {
 
@@ -14,27 +15,26 @@ const Form = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost/E-commerce-webshop/server/', inputs)
+        axios.post('http://localhost/E-commerce-webshop/server/Model/Category.php', inputs)
         console.log(inputs)
     }
     
 
   return (
-    <form onSubmit={handleForm}>
-        <label>first name</label>
-        <input onChange={handleChange} type="text" name="first_name" ></input>
+    <div>
+    <form onSubmit={handleForm} action="Model/CategoryFill.php">
+        <label>name</label>
+        <input onChange={handleChange} type="text" name="name" ></input>
+        <br/>
 
-        <label>last name</label>
-        <input onChange={handleChange} type="text" name="last_name" ></input>
-
-        <label>email</label>
-        <input onChange={handleChange} type="text" name="email" ></input>
-
-        <label>password</label>
-        <input onChange={handleChange} type="text" name="password" ></input>
+        <label>description</label>
+        <input onChange={handleChange} type="text" name="description" ></input>
+        <br/>
 
         <button>save</button>
     </form>
+    <DisplayUser />
+    </div>
   )
 }
 

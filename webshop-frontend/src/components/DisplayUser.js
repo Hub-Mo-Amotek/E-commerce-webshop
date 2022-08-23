@@ -1,10 +1,18 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+
 
 
 const DisplayUser = () => {
 
-    const [users, setUsers] = useState([]);
+
+    let [users, setUsers] = useState([]);
+    // fixing .map is not a function with this line of code
+    if(!Array.isArray(users)){
+        users = [users];
+    }
+
 
     useEffect(() => {
         getUsers();
@@ -12,11 +20,18 @@ const DisplayUser = () => {
 
     function getUsers() {
         axios.get('http://localhost/E-commerce-webshop/server/').then(function(response) {
-            console.log(response.data);
             setUsers(response.data);
         })
     }
-    console.log(users);
+
+    const deleteUser = (id) => {
+        axios.delete(`http://localhost/E-commerce-webshop/server/${id}/delete`).then(function(response){
+            //console.log(response.data);
+            setUsers(response.data);
+            window.location.reload(false);
+        });
+    }
+    //console.log(users)
   return (
     <div>
     <h1>List Users</h1>
@@ -31,12 +46,15 @@ const DisplayUser = () => {
         </thead>
         <tbody>
             {users.map((user, key) => 
-                <tr key={user.id}>
+                <tr key={key}>
                     <td>{user.id}</td>
                     <td>{user.first_name}</td>
                     <td>{user.last_name}</td>
                     <td>{user.email}</td>
-                    <td><button>delete</button></td>
+                    <td>
+                        <Link to={`/user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
+                        <button  onClick={() => deleteUser(user.id)}>delete</button>
+                    </td>
                 </tr>
             )}
 
