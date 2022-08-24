@@ -8,15 +8,16 @@ const AddProduct = () => {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        if(name !== 'primary_image'){
-            setInputs(values => ({...values, [name]: value}));
-        } else{
-            setFile(URL.createObjectURL(event.target.files[0]));
-            const name1 = event.target.name;
-            console.log(file);
-            setInputs(values => ({...values, [name1]: file}));
+        setInputs(values => ({...values, [name]: value}));
+        // if(name !== 'primary_image'){
+        //     setInputs(values => ({...values, [name]: value}));
+        // } else{
+        //     setFile(URL.createObjectURL(event.target.files[0]));
+        //     const name1 = event.target.name;
+        //     console.log(file);
+        //     setInputs(values => ({...values, [name]: file}));
             
-        }
+        // }
     }
 
 
@@ -152,6 +153,7 @@ const AddProduct = () => {
             </div>
             <img src={file}  alt={file}/>
         </div>
+       
     </div>
   )
 }
