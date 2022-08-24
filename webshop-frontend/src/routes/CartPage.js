@@ -50,18 +50,23 @@ const CartPage = () => {
     //the id will be filtered out of the list and a new list will be displayed.
     function handleRemove(id) {
         const newProducts = products.filter((product) => product.id !== id);
-        setProducts([...newProducts]); //spread-operator to make clear tho react, the sate was changed with new array.
+        setProducts([...newProducts]); //spread-operator to make clear tho react, the state was changed with new array.
+        handleSubtotal();
     }
     //when the user removes or changes something in the cart, the subtotal will be updated
+    let tempSubtotal = 0;
     function handleSubtotal() {
-        // if (products.length ) {
-            let tempSubtotal = 0;
             products.forEach((product) => {
                 tempSubtotal += product.price * product.quantity;
              })
             setSubtotal(tempSubtotal)
-       // }
     }
+
+    useEffect(() => {
+        handleRemove()
+        handleSubtotal()
+    }, [products]);
+
     //When the user changes the quantity, the subtotal will be updated
     const handleChange = event => {
         setSelected(event.target.value);
@@ -73,6 +78,7 @@ const CartPage = () => {
             } else {
                 newProducts.push(product);
             }
+            console.log(newProducts);
         })
         setProducts([...newProducts])
         handleSubtotal();
