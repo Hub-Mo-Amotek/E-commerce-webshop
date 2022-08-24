@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
-
+//TODO: price at start is 0.
+//TODO: when item is removed the prices stays the same.
 const CartPage = () => {
-    //TODO: proceed to checkout
-
     //PRODUCTS-IN CART
     const productsInCartList = [
         {
@@ -11,8 +10,7 @@ const CartPage = () => {
             imageAlt: 'Pikachu',
             imageSrc: './assets/images/gokupng.png',
             name: 'pikachu',
-            price: 111,
-            shippingCost: 111,
+            price: 1,
             quantity: 1,
         },
         {
@@ -20,11 +18,11 @@ const CartPage = () => {
             imageAlt: 'Lala',
             imageSrc: './assets/images/gokupng.png',
             name: 'lala',
-            price: 211,
-            shippingCost: 111,
+            price: 2,
             quantity: 1,
         }
     ];
+
     //QUANTITY-OPTIONS:
     const options = [
         {label: 1, value: 1},
@@ -52,19 +50,17 @@ const CartPage = () => {
     //the id will be filtered out of the list and a new list will be displayed.
     function handleRemove(id) {
         const newProducts = products.filter((product) => product.id !== id);
-        setProducts([...newProducts]); //spread-operator om react duidelijk te maken dat state aangepast is met nieuwe array
+        setProducts([...newProducts]); //spread-operator to make clear tho react, the sate was changed with new array.
     }
     //when the user removes or changes something in the cart, the subtotal will be updated
     function handleSubtotal() {
-        if (products.length === 0) {
-            setSubtotal = 0;
-        } else {
+        // if (products.length ) {
             let tempSubtotal = 0;
             products.forEach((product) => {
                 tempSubtotal += product.price * product.quantity;
-            })
+             })
             setSubtotal(tempSubtotal)
-        }
+       // }
     }
     //When the user changes the quantity, the subtotal will be updated
     const handleChange = event => {
@@ -184,13 +180,13 @@ const CartPage = () => {
                         </dl>
 
                         <div className="mt-6">
-                            <button
+                            <a href="/checkout"
                                 type="submit"
                                 className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3
                                 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
                                 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
                                 Checkout
-                            </button>
+                          </a>
                         </div>
                     </section>
                 </form>
