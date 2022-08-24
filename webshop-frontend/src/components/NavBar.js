@@ -1,3 +1,4 @@
+/*
 import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import {Routes, Route, useNavigate} from 'react-router-dom';
@@ -116,3 +117,4 @@ export default () => {
             </nav>
         )
 }
+*/
