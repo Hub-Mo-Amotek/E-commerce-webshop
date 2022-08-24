@@ -1,19 +1,23 @@
 import React from 'react'
 import { useEffect, useRef, useState } from 'react'
-
+import {Routes, Route, useNavigate} from 'react-router-dom';
+import Dropdown from './Dropdowncomp';
 
 export default () => {
 
+        let navigate = useNavigate();
         const [state, setState] = useState(false)
         const navRef = useRef()
 
         // Replace javascript:void(0) path with your path
         const navigation = [
-                { title: "All Products", path: "javascript:void(0)" },
-                { title: "Categories", path: "javascript:void(0)" },
-                { title: "Shopping Cart", path: "javascript:void(0)" },
-                { title: "Sell", path: "javascript:void(0)" }
+                { title: "All Products", path: "/" },
+                //{ title: "Categories", path: "javascript:void(0)" },
+                //{ title: "Shopping Cart", path: "javascript:void(0)" },
+                //{ title: "Sell", path: "javascript:void(0)" }
         ]
+
+
 
         useEffect(() => {
 
@@ -38,9 +42,9 @@ export default () => {
             <nav ref={navRef} className="bg-white w-full top-0 z-20">
                     <div className="items-center px-4 max-w-screen-xl mx-auto lg:flex lg:px-8">
                             <div className="flex items-center justify-between py-3 lg:py-4 lg:block">
-                                    <a href="javascript:void(0)">
+                                    <a href="/">
                                             <img
-                                                src="../assets/images/images.png"
+                                                src={require('../assets/images/gbay-logo.png')}
                                                 width={120}
                                                 height={50}
                                                 alt="Logo Icon"
@@ -66,20 +70,28 @@ export default () => {
                             </div>
                             <div className={`flex-1 justify-between flex-row-reverse lg:overflow-visible lg:flex lg:pb-0 lg:pr-0 lg:h-auto ${ state ? 'h-screen pb-20 overflow-auto pr-4' : 'hidden'}`}>
                                     <div>
+
                                             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
+                                                    <Dropdown />
                                                     <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
-                                                            <a href="javascript:void(0)" className="text-gray-600 hover:text-indigo-600">
-                                                                    Contact
+                                                            <a href="/" className="text-gray-600 hover:text-indigo-600">
+                                                                    Sell
                                                             </a>
                                                     </li>
                                                     <li className="mt-4 lg:mt-0">
-                                                            <a href="javascript:void(0)" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
+                                                            <a href="/Login" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
                                                                     Login
                                                             </a>
                                                     </li>
                                                     <li className="mt-8 lg:mt-0">
-                                                            <a href="javascript:void(0)" className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline">
+                                                            <a href="/SignUp" className="py-3 px-4 text-center text-white bg-indigo-600 hover:bg-indigo-700 rounded-md shadow block lg:inline">
                                                                     Sign Up
+                                                            </a>
+                                                    </li>
+                                                    <li className="mt-8 lg:mt-0">
+                                                            <a href="/cart" className="py-3 px-4 text-center border text-gray-600 hover:text-indigo-600 rounded-md block lg:inline lg:border-0">
+                                                                <img src={require('../assets/images/cart.png')} alt="cart" width="50"
+                                                                     height="50"/>
                                                             </a>
                                                     </li>
                                             </ul>
