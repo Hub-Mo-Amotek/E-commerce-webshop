@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
 
 const CartPage = () => {
-    //TODO: shipping cost.
     //TODO: order-total.
     //TODO: proceed to checkout
 
@@ -38,6 +37,9 @@ const CartPage = () => {
         {label: 7, value: 7},
         {label: 8, value: 8},
     ]
+
+    //SHIPPING-COST
+    const shipping = 5.00;
 
     //In order to remove items from the list, we need to use the useState Hook:
     let [products, setProducts] = useState(productsInCartList);
@@ -81,7 +83,7 @@ const CartPage = () => {
         setProducts([...newProducts])
         handleSubtotal();
     };
-    
+
     return (
         <div className="cartPage">
             <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -163,13 +165,13 @@ const CartPage = () => {
                         <dl className="mt-6 space-y-4">
                             <div className="flex items-center justify-between">
                                 <dt className="text-sm text-gray-600">Subtotal</dt>
-                                <dd className="text-sm font-medium text-gray-900">{subtotal}</dd>
+                                <dd className="text-sm font-medium text-gray-900">{subtotal.toFixed(2)}</dd>
                             </div>
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="flex items-center text-sm text-gray-600">
                                     <span>Shipping</span>
                                 </dt>
-                                <dd className="text-sm font-medium text-gray-900">€5.00</dd>
+                                <dd className="text-sm font-medium text-gray-900">{shipping.toFixed(2)}</dd>
                             </div>
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="text-base font-medium text-gray-900">Order total</dt>
