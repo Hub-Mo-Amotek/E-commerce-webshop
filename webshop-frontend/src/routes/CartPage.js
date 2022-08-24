@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
 
 const CartPage = () => {
-    //TODO: order-total.
     //TODO: proceed to checkout
 
     //PRODUCTS-IN CART
@@ -45,6 +44,9 @@ const CartPage = () => {
     let [products, setProducts] = useState(productsInCartList);
     //In order to access the selected and to control it we need to use the useState Hook:
     let [selected, setSelected] = useState(1);
+    //the price  will be updated in the order-summary.
+    let [subtotal, setSubtotal] = useState(0);
+
 
     //When the user clicks on the remove-button, the item with that specific product.id will be removed from the cart.
     //the id will be filtered out of the list and a new list will be displayed.
@@ -52,10 +54,7 @@ const CartPage = () => {
         const newProducts = products.filter((product) => product.id !== id);
         setProducts([...newProducts]); //spread-operator om react duidelijk te maken dat state aangepast is met nieuwe array
     }
-
-    //the price  will be updated in the order-summary.
-    let [subtotal, setSubtotal] = useState(0)
-
+    //when the user removes or changes something in the cart, the subtotal will be updated
     function handleSubtotal() {
         if (products.length === 0) {
             setSubtotal = 0;
@@ -67,8 +66,7 @@ const CartPage = () => {
             setSubtotal(tempSubtotal)
         }
     }
-
-    //When the user changes the quantity, the price and shipping-cost will be updated in the order-summary.
+    //When the user changes the quantity, the subtotal will be updated
     const handleChange = event => {
         setSelected(event.target.value);
         const newProducts = [];
@@ -83,6 +81,10 @@ const CartPage = () => {
         setProducts([...newProducts])
         handleSubtotal();
     };
+    //Subtotal + shipping = orderTotal.
+    function orderTotal (shipping, subtotal) {
+        return shipping + subtotal;
+    }
 
     return (
         <div className="cartPage">
@@ -156,34 +158,37 @@ const CartPage = () => {
                     {/* Order summary */}
                     <section
                         aria-labelledby="summary-heading"
-                        className="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5"
-                    >
+                        className="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
                         <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
                             Order summary
                         </h2>
 
                         <dl className="mt-6 space-y-4">
+                            {/*SUBTOTAL*/}
                             <div className="flex items-center justify-between">
                                 <dt className="text-sm text-gray-600">Subtotal</dt>
                                 <dd className="text-sm font-medium text-gray-900">{subtotal.toFixed(2)}</dd>
                             </div>
+                            {/*SHIPPING-COST*/}
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="flex items-center text-sm text-gray-600">
                                     <span>Shipping</span>
                                 </dt>
                                 <dd className="text-sm font-medium text-gray-900">{shipping.toFixed(2)}</dd>
                             </div>
+                            {/*ORDER-TOTAL*/}
                             <div className="border-t border-gray-200 pt-4 flex items-center justify-between">
                                 <dt className="text-base font-medium text-gray-900">Order total</dt>
-                                <dd className="text-base font-medium text-gray-900">€35.00</dd>
+                                <dd className="text-base font-medium text-gray-900">{orderTotal(shipping, subtotal).toFixed(2)}</dd>
                             </div>
                         </dl>
 
                         <div className="mt-6">
                             <button
                                 type="submit"
-                                className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500"
-                            >
+                                className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3
+                                px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
+                                focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
                                 Checkout
                             </button>
                         </div>
