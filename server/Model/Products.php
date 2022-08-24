@@ -14,32 +14,30 @@ class Products extends DataConnection {
         $method = $_SERVER['REQUEST_METHOD'];
         switch($method){
             case 'POST':
-               // file_put_contents(./uploaded/aba/bee.png): Failed to open stream: No such file or directory in <b>D:\BeCode\webpage\E-commerce-webshop\server\Model\Products.php</b> on line <b>34</b><br />
-
                 $productData = json_decode(file_get_contents('php://input'));
                 $sql = "INSERT INTO `product` (`name`, `description`,`short_description`,`price`,`primary_image`,`sub_image_1`,`sub_image_2`,`created_at`,`quantity`,`category_id`,`user_id`,`discount_id`)
                 VALUES (:name,:description,:short_description,:price,:primary_image,:sub_image_1,:sub_image_2,:created_at,:quantity,:category_id,:user_id,:discount_id)";
               
                 $stmt = $this->connect()->prepare($sql);
 
-                $DIR = $_SERVER['DOCUMENT_ROOT']."/E-commerce-webshop/server/Model/uploaded/";          
-                $DIR = str_replace('/', '\\', $DIR);    
-                     print_r($productData);
-                $file_chunks = explode(";base64,", $productData->primary_image);
-                    print_r($file_chunks);
-                $fileType = explode("\\", $file_chunks[0]);
-                $image_type = $fileType[2];
-                $base64Img = base64_decode($file_chunks[0]);
-                print_r($fileType);
-                print_r($image_type);
-                $file = $DIR;
-                $base64Img = base64_decode($file_chunks[0]);
-                print_r($base64Img);
-                $file = $DIR . uniqid().'_'.$image_type;
-                print_r($file);
-               // file_put_contents($file, $base64Img);
-                $from = $file_chunks[0];
-                move_uploaded_file($from,$DIR);
+            //     $DIR = $_SERVER['DOCUMENT_ROOT']."/E-commerce-webshop/server/Model/uploaded/";          
+            //     $DIR = str_replace('/', '\\', $DIR);    
+            //          print_r($productData);
+            //     $file_chunks = explode(";base64,", $productData->primary_image);
+            //         print_r($file_chunks);
+            //     $fileType = explode("\\", $file_chunks[0]);
+            //     $image_type = $fileType[2];
+            //     $base64Img = base64_decode($file_chunks[0]);
+            //     print_r($fileType);
+            //     print_r($image_type);
+            //     $file = $DIR;
+            //     $base64Img = base64_decode($file_chunks[0]);
+            //     print_r($base64Img);
+            //     $file = $DIR . uniqid().'_'.$image_type;
+            //     print_r($file);
+            //    // file_put_contents($file, $base64Img);
+            //     $from = $file_chunks[0];
+            //     move_uploaded_file($from,$DIR);
                 $date = date('Y-m-d');
                 
                 $stmt->bindParam(':name', $productData->name);
