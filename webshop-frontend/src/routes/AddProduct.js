@@ -3,24 +3,25 @@ import React, { useState } from 'react';
 
 const AddProduct = () => {
     const [inputs, setInputs] = useState([]);
-
+    const [file, setFile] = useState();
+   
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
+        if(name !== 'primary_image'){
+            setInputs(values => ({...values, [name]: value}));
+        } else{
+            setFile(URL.createObjectURL(event.target.files[0]));
+            const name1 = event.target.name;
+            console.log(file);
+            setInputs(values => ({...values, [name1]: file}));
+            
+        }
     }
-
-    const handleImage = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
-        setInputs(values => ({...values, [name]: value}));
-    }
-
 
 
     const handleForm = (e) => {
         e.preventDefault();
-
         axios.post('http://localhost/E-commerce-webshop/server/Model/Products.php', inputs)
         console.log(inputs)
     }
@@ -149,6 +150,7 @@ const AddProduct = () => {
                     <button type="submit" name="page">Submit</button>
                 </form>
             </div>
+            <img src={file}  alt={file}/>
         </div>
     </div>
   )

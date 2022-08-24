@@ -24,7 +24,7 @@ class Products extends DataConnection {
 
                 $DIR = $_SERVER['DOCUMENT_ROOT']."/E-commerce-webshop/server/Model/uploaded/";          
                 $DIR = str_replace('/', '\\', $DIR);    
-                print_r($productData->primary_image);
+                     print_r($productData);
                 $file_chunks = explode(";base64,", $productData->primary_image);
                     print_r($file_chunks);
                 $fileType = explode("\\", $file_chunks[0]);
