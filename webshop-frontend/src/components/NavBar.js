@@ -2,7 +2,6 @@
 import React from 'react'
 import { useEffect, useRef, useState } from 'react'
 import {Routes, Route, useNavigate} from 'react-router-dom';
-import Dropdown from './Dropdowncomp';
 
 export default () => {
 
@@ -73,7 +72,6 @@ export default () => {
                                     <div>
 
                                             <ul className="flex flex-col-reverse space-x-0 lg:space-x-6 lg:flex-row">
-                                                    <Dropdown />
                                                     <li className="mt-8 mb-8 lg:mt-0 lg:mb-0">
                                                             <a href="/" className="text-gray-600 hover:text-indigo-600">
                                                                     Sell
