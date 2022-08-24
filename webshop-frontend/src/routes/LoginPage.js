@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginPage = () => {
 
@@ -10,13 +11,25 @@ const LoginPage = () => {
 
   const handleChange = (e) => {
       setUser({...user, [e.target.name]: e.target.value})
+
   }
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    axios.post('http://localhost/E-commerce-webshop/server/Model/Login.php', user)
+    .then((result)=>{
+      console.log(result.data.first_name, result.data.id);
+    });
+    console.log(user);
+
+}
+
   return (
     <div>
       <div className="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
         <div className="w-full sm:max-w-md p-5 mx-auto">
           <h2 className="mb-12 text-center text-5xl font-extrabold">G-BAY</h2>
-          <form>
+          <form onSubmit={handleForm}>
             <div className="mb-4">
               <label className="block mb-1" htmlFor="email" >Email</label>
               <input 
