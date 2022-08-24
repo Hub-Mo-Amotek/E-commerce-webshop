@@ -12,7 +12,7 @@ import SignUpPage from "./routes/SignUpPage";
 import Form from './components/Form';
 import ErrorPage from './routes/ErrorPage';
 import EditUserForm from './components/EditUserForm';
-
+import CheckoutPage from "./routes/CheckoutPage";
 
 function App() {
   return (
@@ -30,6 +30,7 @@ function App() {
           <Route exact path="/test-form" element={<Form />} />
           <Route exact path="*" element={<ErrorPage />} />
           <Route path="user/:id/edit" element={<EditUserForm />} />
+          <Route exact path="/checkout" element={<CheckoutPage />} />
         </Routes>
         <Footer />
       </Router>
