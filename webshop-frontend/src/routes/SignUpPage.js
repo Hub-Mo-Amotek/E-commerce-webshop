@@ -15,10 +15,8 @@ const SignUpPage = () => {
     const handleEmailChange = event => {
         if (!isValidEmail(event.target.value)) {
             setError('Email is invalid');
-            console.log("wrong");
         } else {
             setError(null);
-            console.log("ok");
         }
         setMessage(event.target.value);
     };
@@ -74,7 +72,7 @@ return (
                     value={message}
                     onChange={handleEmailChange}
                     required/>
-                {message}
+                {error}
 
                 <input
                     type="password"
