@@ -11,9 +11,9 @@ import { XMarkIcon } from '@heroicons/react/24/solid'
 const Navbar = () => {
     const [open, setOpen] = useState(false)
     return (
-        <nav className="bg-white">
+        <nav className="bg-white sticky top-0">
             <div className="flex items-center font-medium justify-between">
-                <div className="z-50 p-5 lg:w-auto w-full flex justify-between ">
+                <div className="z-50 bg-white p-5 lg:w-auto w-full flex justify-between ">
                     <Link to="/">
                         <img src={Logo} alt="Gbay logo" className="cursor-pointer h-16" />
                     </Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
                     <CartButton />
                 </div>
                 {/* MOBILE NAV */}
-                <ul className={`lg:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
+                <ul className={`lg:hidden bg-white fixed w-full top-0 overflow-auto overscroll-contain bottom-0 divide-y divide-color-nerdy py-24 pl-4 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                     <li>
                         <Link to="/" className="py-7 px-3 inline-block">
                             Home
@@ -53,8 +53,10 @@ const Navbar = () => {
                             All Products
                         </Link>
                     </li>
-                    <NavLinks />
-                    <div className="py-5">
+                    <li>
+                        <NavLinks />
+                    </li>
+                    <div className="py-5 w-full">
                         <LogInButton />
                     </div>
                     <div className="py-5">
