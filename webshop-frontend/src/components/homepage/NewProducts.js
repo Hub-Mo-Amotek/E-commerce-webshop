@@ -91,7 +91,7 @@ const NewProducts = () => {
 
                                 {/*BUTTON ADD TO CART*/}
                                 <button type="submit" className="add-to-cart flex items-center justify-center
-                                            w-full px-8 py-4 mt-4 rounded-sm bg-yellow-500"> onClick={() => addToCart(product.id)}
+                                            w-full px-8 py-4 mt-4 rounded-sm bg-yellow-500" onClick={() => addToCart(product.id)}>
                                     <span className="text-sm font-medium">
                                     Add to Cart
                                     </span>
