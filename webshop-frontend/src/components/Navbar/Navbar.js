@@ -42,7 +42,7 @@ const Navbar = () => {
                     <CartButton />
                 </div>
                 {/* MOBILE NAV */}
-                <ul className={`lg:hidden bg-white fixed w-full top-0 overflow-auto overscroll-contain bottom-0 divide-y divide-color-nerdy py-24 pl-4 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
+                <ul className={`lg:hidden bg-white fixed w-full top-0 overflow-y-auto overscroll-contain bottom-0 divide-y divide-color-nerdy py-24 pl-4 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                     <li>
                         <Link to="/" className="py-7 px-3 inline-block">
                             Home
