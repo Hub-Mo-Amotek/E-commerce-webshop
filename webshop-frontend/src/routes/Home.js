@@ -9,18 +9,15 @@ const Home = () => {
     <div className='Home'>
    
     {/* Carousel Thingy */}
-        <section className='carousel'>
-            <Carousel />
-        </section>
+    {/*    <section className='carousel'>*/}
+    {/*        <Carousel />*/}
+    {/*    </section>*/}
         <section className='newProducts'>
             <NewProducts />
         </section>
-        <section className=''>
-            
-        </section>
-        <section className='salesImages'>
-            <SalesImages />
-        </section>
+        {/*<section className='salesImages'>*/}
+        {/*    <SalesImages />*/}
+        {/*</section>*/}
         <section className='topSellingProducts'>
             <TopSellingProduct />
         </section>
