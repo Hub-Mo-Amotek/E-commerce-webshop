@@ -74,7 +74,7 @@ return (
                     value={message}
                     onChange={handleEmailChange}
                     required/>
-                {error}
+                {message}
 
                 <input
                     type="password"
