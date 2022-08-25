@@ -12,11 +12,10 @@ const LogInButton = () => {
     const [name, setName] = useState();
     let [log, setLog] = useState();
 
-
-
     useEffect(()=>{
             let auth = localStorage.getItem('id');
             let b = localStorage.getItem('firstName')
+
 
             if(auth){
                     setLog('Logout');
@@ -26,7 +25,8 @@ const LogInButton = () => {
 
             setAuthe(auth);
             setName(b);
-    }, []);
+    }, [authe]);
+
 
     const handleLogAction = () => {
             let auth = localStorage.getItem('id');
@@ -36,11 +36,12 @@ const LogInButton = () => {
                   }else{
                     navigate('/Login');
                   }
+                  window.location.reload(false);
     }
 
     return (
         <button type="button"
-                className="inline-flex items-center px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md"
+                className="inline-flex items-center sm:mx-0 lg:mx-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md"
                 onClick={handleLogAction}>
             {log}
         </button>
