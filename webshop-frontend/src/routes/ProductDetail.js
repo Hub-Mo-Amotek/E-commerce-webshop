@@ -161,7 +161,7 @@ const ProductDetail = () => {
                 </div>
             </section>
             {/* end of product detail section */}
-            
+
             {/* start of related products section */}
             {/*            <section>
                             <div className="max-w-screen-xl px-4 py-8 mx-auto">
