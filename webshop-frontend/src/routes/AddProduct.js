@@ -25,7 +25,7 @@ const AddProduct = () => {
     const handleForm = (e) => {
         e.preventDefault();
         axios.post('http://localhost/E-commerce-webshop/server/Model/Products.php', inputs)
-        console.log(inputs)
+        console.log(inputs.name)
     }
 
   return (
