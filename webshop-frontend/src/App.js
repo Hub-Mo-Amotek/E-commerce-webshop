@@ -13,6 +13,9 @@ import Form from './components/Form';
 import ErrorPage from './routes/ErrorPage';
 import EditUserForm from './components/EditUserForm';
 import CheckoutPage from "./routes/CheckoutPage";
+import AddProduct from './routes/AddProduct';
+import MyAccount from './routes/MyAccount';
+
 
 function App() {
   return (
@@ -31,6 +34,9 @@ function App() {
           <Route exact path="*" element={<ErrorPage />} />
           <Route path="user/:id/edit" element={<EditUserForm />} />
           <Route exact path="/checkout" element={<CheckoutPage />} />
+          <Route exact path="user/:id/edit" element={<EditUserForm />} />
+          <Route exact path="/add-product" element={<AddProduct />} />
+          <Route exact path="/my-account" element={<MyAccount />} />
         </Routes>
         <Footer />
       </Router>
