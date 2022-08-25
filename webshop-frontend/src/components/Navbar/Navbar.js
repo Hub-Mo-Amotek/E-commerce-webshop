@@ -17,7 +17,7 @@ const Navbar = () => {
                     <Link to="/">
                         <img src={Logo} alt="Gbay logo" className="cursor-pointer h-16" />
                     </Link>
-                    <div className="w-10 h-10 pt-4 cursor-pointer lg:hidden" onClick={() => setOpen(!open)}>
+                    <div className="w-7 h-7 pt-4 cursor-pointer lg:hidden" onClick={() => setOpen(!open)}>
                         {open ? (<XMarkIcon />) : (<Bars3Icon />)}
                     </div>
                 </div>
