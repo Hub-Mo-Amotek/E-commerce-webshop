@@ -1,13 +1,22 @@
 import React from 'react';
-import NavBar from './NavBar';
+import NavBar from './Navbar/Navbar';
 
 
 
 const Header = () => {
   return (
-    <div>Header
+    <div>
+
         <NavBar />
+
+        <div className="flex justify-center items-end w-full sm:h-72 md:h-80 lg:h-96 xl:h-96 bg-gradient-to-t from-color-one to-color-two">
+
+            <img src="./assets/images/header/header.png"/>
+
+        </div>
+
     </div>
+
   )
 }
 

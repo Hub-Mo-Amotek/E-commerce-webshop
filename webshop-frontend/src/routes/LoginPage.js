@@ -1,8 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const LoginPage = () => {
+  const refreshPage = () =>{
+    window.location.reload(false);
+  }
 
   let navigate = useNavigate();
 
@@ -10,13 +14,35 @@ const LoginPage = () => {
 
   const handleChange = (e) => {
       setUser({...user, [e.target.name]: e.target.value})
+
   }
+  const handleForm = (e) => {
+    e.preventDefault();
+
+    axios.post('http://localhost/E-commerce-webshop/server/Model/Login.php', user)
+    .then((result)=>{
+      if(result.data){
+        console.log('user found', result.data);
+        window.localStorage.setItem('email', result.data.email);
+        window.localStorage.setItem('id', result.data.id);
+        window.localStorage.setItem('firstName', result.data.first_name);
+          navigate('/my-account');
+          refreshPage();
+      }else{
+        alert('we couldnt find anyone with those credentials. pls register if you still dont have an account');
+      }
+      
+    });
+    console.log(user);
+
+}
+
   return (
     <div>
       <div className="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
         <div className="w-full sm:max-w-md p-5 mx-auto">
           <h2 className="mb-12 text-center text-5xl font-extrabold">G-BAY</h2>
-          <form>
+          <form onSubmit={handleForm}>
             <div className="mb-4">
               <label className="block mb-1" htmlFor="email" >Email</label>
               <input 
@@ -43,9 +69,10 @@ const LoginPage = () => {
             </div>
             <div className="mt-6">
               <button
-                  className="w-full inline-flex items-center justify-center px-4 py-2 bg-red-600 border border-transparent
-                  rounded-md font-semibold capitalize text-white hover:bg-red-700 active:bg-red-700 focus:outline-none
-                  focus:border-red-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition">Submit
+                  className="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent
+                  rounded-md font-semibold capitalize text-white hover:bg-green-700 active:bg-green-700 focus:outline-none
+                  focus:border-green-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition"
+                  >Login
               </button>
             </div>
             <div className="mt-6 text-center">
@@ -62,3 +89,37 @@ const LoginPage = () => {
 }
 
 export default LoginPage
+
+
+        // START localstorage login info
+        // const [authe, setAuthe] = useState();
+        // const [name, setName] = useState();
+        // let [log, setLog] = useState();
+
+
+
+        // useEffect(()=>{
+        //         let auth = localStorage.getItem('id');
+        //         let b = localStorage.getItem('firstName')
+
+        //         if(auth){
+        //                 setLog('Logout');
+        //               }else{
+        //                 setLog('Login');
+        //               }
+
+        //         setAuthe(auth);
+        //         setName(b);
+        // }, []);
+
+        // const handleLogAction = () => {
+        //         let auth = localStorage.getItem('id');
+        //         if(auth){
+        //                 localStorage.clear();
+        //                 navigate('/Login');
+        //               }else{
+        //                 navigate('/Login');
+        //               }
+        // }
+
+        // END localstorage login info

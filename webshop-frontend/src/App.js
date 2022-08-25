@@ -12,8 +12,11 @@ import SignUpPage from "./routes/SignUpPage";
 import Form from './components/Form';
 import ErrorPage from './routes/ErrorPage';
 import EditUserForm from './components/EditUserForm';
+import CheckoutPage from "./routes/CheckoutPage";
 import AddProduct from './routes/AddProduct';
 import CategoryPage from './routes/CategoryPage';
+import MyAccount from './routes/MyAccount';
+
 
 
 function App() {
@@ -33,7 +36,10 @@ function App() {
           <Route exact path="/test-form" element={<Form />} />
           <Route exact path="*" element={<ErrorPage />} />
           <Route path="user/:id/edit" element={<EditUserForm />} />
+          <Route exact path="/checkout" element={<CheckoutPage />} />
+          <Route exact path="user/:id/edit" element={<EditUserForm />} />
           <Route exact path="/add-product" element={<AddProduct />} />
+          <Route exact path="/my-account" element={<MyAccount />} />
         </Routes>
         <Footer />
       </Router>
