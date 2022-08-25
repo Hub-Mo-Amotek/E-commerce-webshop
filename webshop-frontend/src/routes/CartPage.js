@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import newProducts from "../components/homepage/NewProducts";
-//TODO: price at start is 0.
-//TODO: when item is removed the prices stays the same.
+
 const CartPage = () => {
     //PRODUCTS-IN CART
     const productsInCartList = [
@@ -52,15 +51,16 @@ const CartPage = () => {
         const newProducts = products.filter((product) => product.id !== id);
         setProducts([...newProducts]); //spread-operator to make clear tho react, the state was changed with new array.
     }
+
     //when the user removes or changes something in the cart, the subtotal will be updated
     function handleSubtotal() {
         let tempSubtotal = 0;
-            products.forEach((product) => {
-                tempSubtotal += product.price * product.quantity;
-             })
-            setSubtotal(tempSubtotal)
+        products.forEach((product) => {
+            tempSubtotal += product.price * product.quantity;
+        })
+        setSubtotal(tempSubtotal)
     }
-    
+
     //When the user changes the quantity, the subtotal will be updated
     const handleChange = event => {
         setSelected(event.target.value);
@@ -76,11 +76,13 @@ const CartPage = () => {
         })
         setProducts([...newProducts])
     };
+
     //Subtotal + shipping = orderTotal.
-    function orderTotal (shipping, subtotal) {
+    function orderTotal(shipping, subtotal) {
         return shipping + subtotal;
     }
 
+    //handleSubtotal every time a change is made.
     useEffect(() => {
         handleSubtotal()
     }, [products]);
@@ -88,9 +90,11 @@ const CartPage = () => {
     return (
         <div className="cartPage">
             <div className="max-w-2xl mx-auto pt-16 pb-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                {/*TITLE*/}
-                <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">Shopping Cart</h1>
+                {/*SHOPPING-CART*/}
+                <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Shopping Cart</h1>
                 <form className="mt-12 lg:grid lg:grid-cols-12 lg:gap-x-12 lg:items-start xl:gap-x-16">
+                    {/*DISPLAY IMG + NAME + PRICE + CHANGE QUANTITY + REMOVE*/}
                     <section aria-labelledby="cart-heading" className="lg:col-span-7">
                         <ul role="list" className="border-t border-b border-gray-200 divide-y divide-gray-200">
                             {products.map((product, key) => (
@@ -154,14 +158,13 @@ const CartPage = () => {
                         </ul>
                     </section>
 
-                    {/* Order summary */}
+                    {/*ORDER-SUMMARY*/}
                     <section
                         aria-labelledby="summary-heading"
                         className="mt-16 bg-gray-50 rounded-lg px-4 py-6 sm:p-6 lg:p-8 lg:mt-0 lg:col-span-5">
                         <h2 id="summary-heading" className="text-lg font-medium text-gray-900">
-                            Order summary
-                        </h2>
-
+                            Order summary</h2>
+                        {/*SUBTOTAL + SHIPPING-COST + ORDER-TOTAL*/}
                         <dl className="mt-6 space-y-4">
                             {/*SUBTOTAL*/}
                             <div className="flex items-center justify-between">
@@ -181,18 +184,20 @@ const CartPage = () => {
                                 <dd className="text-base font-medium text-gray-900">{orderTotal(shipping, subtotal).toFixed(2)}</dd>
                             </div>
                         </dl>
-
+                        {/*CHECKOUT-BUTTON*/}
                         <div className="mt-6">
                             <a href="/checkout"
-                                type="submit"
-                                className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3
+                               type="submit"
+                               className="w-full bg-indigo-600 border border-transparent rounded-md shadow-sm py-3
                                 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none
                                 focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-indigo-500">
                                 Checkout
-                          </a>
+                            </a>
                         </div>
                     </section>
+                    {/*END ORDER-SUMMARY*/}
                 </form>
+                {/*END SHOPPING-CART*/}
             </div>
         </div>
     )
