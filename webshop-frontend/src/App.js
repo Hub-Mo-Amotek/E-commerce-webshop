@@ -13,6 +13,7 @@ import Form from './components/Form';
 import ErrorPage from './routes/ErrorPage';
 import EditUserForm from './components/EditUserForm';
 import AddProduct from './routes/AddProduct';
+import CategoryPage from './routes/CategoryPage';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/SignUp" element={<SignUpPage />} />
           <Route exact path="/product-detail" element={<ProductDetail />} />
           <Route exact path="/category" element={<ProductsPage />} />
+          <Route exact path="/categorypage" element={<CategoryPage />} />
           <Route exact path="/cart" element={<CartPage />} />
           <Route exact path="/test-form" element={<Form />} />
           <Route exact path="*" element={<ErrorPage />} />
