@@ -41,7 +41,7 @@ const LogInButton = () => {
 
     return (
         <button type="button"
-                className="inline-flex items-center mx-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md"
+                className="inline-flex items-center sm:mx-0 lg:mx-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md"
                 onClick={handleLogAction}>
             {log}
         </button>
