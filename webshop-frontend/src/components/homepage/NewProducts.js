@@ -59,15 +59,15 @@ const NewProducts = () => {
                                 {/*LINK TO DETAIL-PAGE: PRODUCT IMAGE + NAME + PRICE*/}
                                 <a href="/product-detail" className="relative block border border-gray-100">
                                     {/*WISH-LIST*/}
-                                    {/*<button
-          type="button"
-          name="wishlist"
-          className="absolute p-2 text-white bg-black rounded-full right-4 top-4"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-          </svg>
-        </button>*/}
+                                    {/*<button type="button" name="wishlist" className="absolute p-2 text-white
+                                    bg-black rounded-full right-4 top-4">
+                                            <svg className="w-4 h-4" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
+                                            </path>
+                                            </svg>
+                                        </button>*/}
                                     {/*END WISH-LIST*/}
                                     <img
                                         loading="lazy" alt={product.title}
@@ -87,7 +87,7 @@ const NewProducts = () => {
                                         </div>
                                     </div>
                                 </a>
-                                {/*LINK TO DETAIL-PAGE: END PRODUCT IMAGE + NAME + PRICE*/}
+                                {/*END LINK TO DETAIL-PAGE: END PRODUCT IMAGE + NAME + PRICE*/}
 
                                 {/*BUTTON ADD TO CART*/}
                                 <button type="submit" className="add-to-cart flex items-center justify-center
