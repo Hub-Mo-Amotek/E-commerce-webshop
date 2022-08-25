@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const LoginPage = () => {
+  const refreshPage = () =>{
+    window.location.reload(false);
+  }
 
   let navigate = useNavigate();
 
@@ -24,6 +27,7 @@ const LoginPage = () => {
         window.localStorage.setItem('id', result.data.id);
         window.localStorage.setItem('firstName', result.data.first_name);
           navigate('/my-account');
+          refreshPage();
       }else{
         alert('we couldnt find anyone with those credentials. pls register if you still dont have an account');
       }
@@ -67,7 +71,8 @@ const LoginPage = () => {
               <button
                   className="w-full inline-flex items-center justify-center px-4 py-2 bg-green-600 border border-transparent
                   rounded-md font-semibold capitalize text-white hover:bg-green-700 active:bg-green-700 focus:outline-none
-                  focus:border-green-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition">Login
+                  focus:border-green-700 focus:ring focus:ring-red-200 disabled:opacity-25 transition"
+                  >Login
               </button>
             </div>
             <div className="mt-6 text-center">

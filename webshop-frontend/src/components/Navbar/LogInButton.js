@@ -12,11 +12,10 @@ const LogInButton = () => {
     const [name, setName] = useState();
     let [log, setLog] = useState();
 
-
-
     useEffect(()=>{
             let auth = localStorage.getItem('id');
             let b = localStorage.getItem('firstName')
+
 
             if(auth){
                     setLog('Logout');
@@ -26,7 +25,8 @@ const LogInButton = () => {
 
             setAuthe(auth);
             setName(b);
-    }, []);
+    }, [authe]);
+
 
     const handleLogAction = () => {
             let auth = localStorage.getItem('id');
@@ -36,6 +36,7 @@ const LogInButton = () => {
                   }else{
                     navigate('/Login');
                   }
+                  window.location.reload(false);
     }
 
     return (
