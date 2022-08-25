@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import {Link} from "react-router-dom";
 
 const SignUpButton = () => {
     let [logged, setLogged] = useState();
@@ -16,11 +17,11 @@ const SignUpButton = () => {
 }, []);
 
     return (
-        <button type="button"
-
-                className={logged}>
-            Sign up
-        </button>
+        <Link to="/SignUp">
+            <button type="button" className={logged}>
+                Sign up
+            </button>
+        </Link>
     )
 }
 

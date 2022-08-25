@@ -12,35 +12,45 @@ const Navbar = () => {
     const [open, setOpen] = useState(false)
     return (
         <nav className="bg-white">
-            <div className="flex items-center font-medium justify-around">
-                <div className="z-50 p-5 md:w-auto w-full flex justify-between ">
-                    <img src={Logo} alt="Gbay logo" className="cursor-pointer h-16" />
-                    <div className="w-10 h-10 pt-2 cursor-pointer" onClick={() => setOpen(!open)}>
+            <div className="flex items-center font-medium justify-between">
+                <div className="z-50 p-5 lg:w-auto w-full flex justify-between ">
+                    <Link to="/">
+                        <img src={Logo} alt="Gbay logo" className="cursor-pointer h-16" />
+                    </Link>
+                    <div className="w-10 h-10 pt-4 cursor-pointer lg:hidden" onClick={() => setOpen(!open)}>
                         {open ? (<XMarkIcon />) : (<Bars3Icon />)}
                     </div>
                 </div>
-                <ul className="md:flex hidden uppercase items-center gap-8">
+                <ul className="lg:flex hidden uppercase items-center gap-8">
                     <li>
                         <Link to="/" className="py-7 px-3 inline-block">
                             Home
                         </Link>
                     </li>
+                    <li>
+                        <Link to="/category" className="py-7 px-3 inline-block">
+                            All Products
+                        </Link>
+                    </li>
                     <NavLinks />
                 </ul>
-                <div className="md:block hidden">
+                <div className="lg:block hidden">
                     <LogInButton />
-                </div>
-                <div className="md:block hidden">
                     <SignUpButton />
                 </div>
-                <div className="md:block hidden">
+                <div className="lg:block hidden mr-5">
                     <CartButton />
                 </div>
                 {/* MOBILE NAV */}
-                <ul className={`md:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4`}>
+                <ul className={`lg:hidden bg-white absolute w-full h-full bottom-0 py-24 pl-4 duration-500 ${open ? "left-0" : "left-[-100%]"}`}>
                     <li>
                         <Link to="/" className="py-7 px-3 inline-block">
                             Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to="/category" className="py-7 px-3 inline-block">
+                            All Products
                         </Link>
                     </li>
                     <NavLinks />
