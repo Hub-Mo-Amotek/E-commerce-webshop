@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Alert from '../components/Alert'
 
@@ -33,7 +33,7 @@ let [alert, setAlert] = useState();
           navigate('/my-account');
           refreshPage();
       }else{
-          setAlert(<Alert color="orange" alertTitel="something went wrong!" alertInfo="try again, or make a new account"/>)
+          setAlert(<Alert clr="red" alertTitel="something went wrong!" alertInfo="try again, or make a new account"/>)
       }
       
     });
@@ -89,12 +89,14 @@ let [alert, setAlert] = useState();
               <a href="#" className="underline">Sign up for an account</a>
             </div>*/}
           </form>
+          <Link to="/signUp">
           <button
                   className="w-full inline-flex items-center justify-center px-4 py-2 bg-blue-600 border border-transparent
                   rounded-md font-semibold capitalize text-white hover:bg-blue-700 active:bg-blue-700 focus:outline-none
                   focus:border-blue-700 focus:ring focus:ring-blue-200 disabled:opacity-25 transition"
-                  >Login
+                  >create account
               </button>
+              </Link>
         </div>
       </div>
     </div>
