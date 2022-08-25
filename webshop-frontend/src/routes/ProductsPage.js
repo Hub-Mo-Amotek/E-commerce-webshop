@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const ProductsPage = () => {
+    //In order to change the product-data, we need to use the useState Hook:
+    let [product, setProduct] = useState();
+
     return (
 
         // GRID CONTAINER
@@ -8,9 +11,20 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                {/*WISH-LIST*/}
+                {/*<button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>*/}
+                {/*END WISH-LIST*/}
 
                 {/*Product Image*/}
-                <img loading="lazy" alt="Goku" className="object-cover w-full h-72" src="./assets/images/products/Ichibansho_Goku.jpg" />
+                <img loading="lazy" alt="Goku" className="object-cover w-full h-72"
+                     src="./assets/images/products/Ichibansho_Goku.jpg"/>
 
                 <div className="p-6">
 
@@ -24,20 +38,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -53,8 +77,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Monkey D. Luffy" className="object-cover w-full h-72" src="./assets/images/products/luffy.jpg" />
+                <img loading="lazy" alt="Monkey D. Luffy" className="object-cover w-full h-72"
+                     src="./assets/images/products/luffy.jpg"/>
 
                 <div className="p-6">
 
@@ -67,20 +100,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -95,8 +138,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Boba Fet" className="object-cover w-full h-72" src="./assets/images/products/boba-fet.jpg" />
+                <img loading="lazy" alt="Boba Fet" className="object-cover w-full h-72"
+                     src="./assets/images/products/boba-fet.jpg"/>
 
                 <div className="p-6">
 
@@ -109,20 +161,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -137,8 +199,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Bulbasaur" className="object-cover w-full h-72" src="./assets/images/products/bulba.jpg" />
+                <img loading="lazy" alt="Bulbasaur" className="object-cover w-full h-72"
+                     src="./assets/images/products/bulba.jpg"/>
 
                 <div className="p-6">
 
@@ -151,20 +222,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -179,8 +260,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Mobile Suit Gundam" className="object-cover w-full h-72" src="./assets/images/products/gundam.jpg" />
+                <img loading="lazy" alt="Mobile Suit Gundam" className="object-cover w-full h-72"
+                     src="./assets/images/products/gundam.jpg"/>
 
                 <div className="p-6">
 
@@ -193,20 +283,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -221,8 +321,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Saitama" className="object-cover w-full h-72" src="./assets/images/products/saitama.jpg" />
+                <img loading="lazy" alt="Saitama" className="object-cover w-full h-72"
+                     src="./assets/images/products/saitama.jpg"/>
 
                 <div className="p-6">
 
@@ -235,20 +344,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -263,8 +382,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Giyu Tomioka" className="object-cover w-full h-72" src="./assets/images/products/demon-slayer.jpg" />
+                <img loading="lazy" alt="Giyu Tomioka" className="object-cover w-full h-72"
+                     src="./assets/images/products/demon-slayer.jpg"/>
 
                 <div className="p-6">
 
@@ -277,20 +405,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
@@ -305,8 +443,17 @@ const ProductsPage = () => {
 
             {/*Product Card*/}
             <a href="/product-detail" className="block border border-gray-100">
+                <button type="button" name="wishlist"
+                        className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                </button>
 
-                <img loading="lazy" alt="Toshiro Hitsugaya" className="object-cover w-full h-72" src="./assets/images/products/bleach.jpg" />
+                <img loading="lazy" alt="Toshiro Hitsugaya" className="object-cover w-full h-72"
+                     src="./assets/images/products/bleach.jpg"/>
 
                 <div className="p-6">
 
@@ -319,20 +466,30 @@ const ProductsPage = () => {
                     {/*Product Rating*/}
                     <div className="flex my-3">
                         <span className="flex items-center">
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
-                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+                                 strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
