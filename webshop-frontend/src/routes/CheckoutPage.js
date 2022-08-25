@@ -69,7 +69,8 @@ const CheckoutPage = () => {
 
                                     {/*--CITY--*/}
                                     <div>
-                                        <label for="city" className="block text-sm font-medium text-gray-700">City</label>
+                                        <label for="city"
+                                               className="block text-sm font-medium text-gray-700">City</label>
                                         <div className="mt-1">
                                             <input type="text" name="city" id="city" autocomplete="address-level2"
                                                    className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
@@ -111,7 +112,8 @@ const CheckoutPage = () => {
 
                                     {/*--PHONE--*/}
                                     <div className="sm:col-span-2">
-                                        <label for="phone" className="block text-sm font-medium text-gray-700">Phone</label>
+                                        <label for="phone"
+                                               className="block text-sm font-medium text-gray-700">Phone</label>
                                         <div className="mt-1">
                                             <input type="text" name="phone" id="phone" autocomplete="tel"
                                                    className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
@@ -124,17 +126,18 @@ const CheckoutPage = () => {
                             <div className="mt-6 flex space-x-2">
                                 <div className="flex items-center h-5">
                                     <input id="saveData" name="saveData" type="checkbox"
-                                           className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500" />
+                                           className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"/>
                                 </div>
-                                <label htmlFor="same-as-shipping" className="text-sm font-medium text-gray-900">Save my contact daitails
-                                for the future</label>
+                                <label htmlFor="same-as-shipping" className="text-sm font-medium text-gray-900">Save my
+                                    contact details
+                                    for the future</label>
                             </div>
 
                             {/*BILLING = SHIPPING?*/}
                             <div className="mt-6 flex space-x-2">
                                 <div className="flex items-center h-5">
                                     <input id="same-as-shipping" name="same-as-shipping" type="checkbox" required
-                                           className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500" />
+                                           className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"/>
                                 </div>
                                 <label htmlFor="same-as-shipping" className="text-sm font-medium text-gray-900">Billing
                                     address is the same as shipping address</label>
@@ -211,7 +214,7 @@ const CheckoutPage = () => {
                     </form>
 
                     {/*--AGREE TO TERMS--*/}
-               {/*     <div className="mt-6 flex space-x-2">
+                    {/*     <div className="mt-6 flex space-x-2">
                         <div className="flex items-center h-5">
                             <input id="same-as-shipping" name="same-as-shipping" type="checkbox" required
                                    className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500" />
@@ -240,10 +243,8 @@ const CheckoutPage = () => {
                 <div className="border-t border-gray-100 py-10 text-center">
                     <p className="text-sm text-gray-500">&copy; 2022 The Crusty Crab. All rights reserved.</p>
                 </div>
-
             </div>
         </div>
-
     )
 }
 
