@@ -1,11 +1,8 @@
 import React, {useState} from 'react'
 
 const ProductsPage = () => {
-
     //In order to change the product-data, we need to use the useState Hook:
     let [product, setProduct] = useState();
-
-    
 
     return (
 
