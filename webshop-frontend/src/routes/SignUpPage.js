@@ -1,5 +1,6 @@
 import {useState} from "react";
 import axios from "axios";
+import Alert from "../components/Alert";
 
 
 const SignUpPage = () => {
@@ -7,6 +8,7 @@ const SignUpPage = () => {
     const [inputs, setInputs] = useState([]);
     const [message, setMessage] = useState('');
     const [error, setError] = useState(null);
+    let [alert, setAlert] = useState();
 
     function isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
@@ -35,7 +37,7 @@ const checkPassword = (e) => {
     if (inputs.password === inputs.confirm_password) {
         handleForm();
     } else {
-        alert('the password doesnt match')
+       setAlert(<Alert clr='red' alertTitel='oops' alertInfo="the password doesnt match the confirmation password" />);
     }
 }
 
@@ -47,6 +49,7 @@ const handleForm = () => {
 return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div>{alert}</div>
             <form onSubmit={checkPassword} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                 <h1 className="mb-8 text-3xl text-center">Sign up</h1>
 
@@ -92,8 +95,10 @@ return (
                     onChange={handleChange}/>
 
                 <button
-                    className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
-                >Create Account
+                    className="w-full inline-flex items-center justify-center px-4 py-2 bg-blue-600 border border-transparent
+                    rounded-md font-semibold capitalize text-white hover:bg-blue-700 active:bg-blue-700 focus:outline-none
+                    focus:border-blue-700 focus:ring focus:ring-blue-200 disabled:opacity-25 transition"
+                    >Create Account
                 </button>
 
 
@@ -109,12 +114,7 @@ return (
                         </div>*/}
             </form>
 
-            <button
-                            className="w-full inline-flex items-center justify-center px-4 py-2 bg-blue-600 border border-transparent
-                            rounded-md font-semibold capitalize text-white hover:bg-blue-700 active:bg-blue-700 focus:outline-none
-                            focus:border-blue-700 focus:ring focus:ring-blue-200 disabled:opacity-25 transition"
-                        >Create Account
-                        </button>
+
         </div>
     </div>
 )
