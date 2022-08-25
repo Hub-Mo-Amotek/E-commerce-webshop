@@ -70,8 +70,8 @@ const NewProducts = () => {
                                         </button>*/}
                                     {/*END WISH-LIST*/}
                                     <img
-                                        loading="lazy" alt={product.title}
-                                        className="object-contain w-full h-60 pt-3" src={product.image}/>
+                                        loading="lazy" alt={product.imageAlt}
+                                        className="object-contain w-full h-60 pt-3" src={product.imageSrc}/>
                                     {/*NAME + PRICE + ADD TO CART*/}
                                     <div className="p-4">
                                         {/*NAME + PRICE*/}
