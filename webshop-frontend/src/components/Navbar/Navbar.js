@@ -7,6 +7,7 @@ import LogInButton from './LogInButton'
 import LogOutButton from './LogOut'
 import SignUpButton from './SignUp'
 import { Bars3Icon } from '@heroicons/react/24/solid'
+import { XMarkIcon } from '@heroicons/react/24/solid'
 
 const Navbar = () => {
     const [open, setOpen] = useState(false)
@@ -14,9 +15,9 @@ const Navbar = () => {
         <nav className="bg-white">
             <div className="flex items-center font-medium justify-around">
                 <div className="z-50 p-5 md:w-auto w-full flex justify-between ">
-                    <img src={Logo} alt="Gbay logo" className="md:cursor-pointer h-16" />
-                    <div className="w-10 h-10 pt-2">
-                        <Bars3Icon />
+                    <img src={Logo} alt="Gbay logo" className="cursor-pointer h-16" />
+                    <div className="w-10 h-10 pt-2 cursor-pointer" onClick={() => setOpen(!open)}>
+                        {open ? (<XMarkIcon />) : (<Bars3Icon />)}
                     </div>
                 </div>
                 <ul className="md:flex hidden uppercase items-center gap-8">
