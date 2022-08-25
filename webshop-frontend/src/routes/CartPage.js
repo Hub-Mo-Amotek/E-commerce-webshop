@@ -120,7 +120,7 @@ const CartPage = () => {
                                                     </a>
                                                 </p>
                                                 {/*PRICE*/}
-                                                <p className="mt-1 text-sm font-medium text-gray-900">{product.price}</p>
+                                                <p className="mt-1 text-sm font-medium text-gray-900">{product.price.toFixed(2)}</p>
                                             </div>
                                             {/*QUANTITY & REMOVE*/}
                                             <div className="mt-4 sm:mt-0 sm:pr-9">
