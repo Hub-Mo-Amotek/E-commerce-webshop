@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 const TopSellingProduct = () => {
   //TODO: remove addToCart-function + import the functionality.
 
-  const productsInCartList = [
+  const productsList = [
     {
       id: 111,
       imageAlt: 'Pikachu',
@@ -38,7 +38,7 @@ const TopSellingProduct = () => {
     }
   ];
 
-  let [products, setProducts] = useState(productsInCartList);
+  let [products, setProducts] = useState(productsList);
 
   function addToCart(id) {
     //TODO: remove this function.
