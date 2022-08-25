@@ -60,6 +60,14 @@ class Products extends DataConnection {
                     $data = ['status' => 0, 'message' => "Failed to create record."];
                 }
                 echo json_encode($data);
+                break;
+            case 'GET':
+                    $sql = "SELECT id,name,primary_image, price FROM product WHERE quantity > 0 LIMIT 4";
+                    $stmt = $this->connect()->prepare($sql);
+                    $stmt->execute();
+                    $allProductsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    echo json_encode($allProductsData);
+                    break;
         }
 
     }
