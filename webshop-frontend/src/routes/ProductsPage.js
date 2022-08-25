@@ -80,7 +80,7 @@ const ProductsPage = () => {
                                 <span className="font-normal">{product.name}</span>
                             </h2>
                             {/*Product Rating*/}
-                            <div className="flex my-3">
+                            {/*<div className="flex my-3">
                         <span className="flex items-center">
                             <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
                                  strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
@@ -109,7 +109,7 @@ const ProductsPage = () => {
                             </svg>
                             <span className="text-sm ml-3">4 Reviews</span>
                         </span>
-                            </div>
+                            </div>*/}
                             {/*Product Price*/}
                             <p className="text-base font-bold">
                                 €{product.price}
