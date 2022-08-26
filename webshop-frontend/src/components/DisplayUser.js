@@ -19,18 +19,11 @@ const DisplayUser = () => {
     }, []);
 
     function getUsers() {
-        axios.get('http://localhost/E-commerce-webshop/server/').then(function(response) {
+        axios.get('http://becode.localhost/SCRUM/E-commerce-webshop/server/Model/Category.php').then(function(response) {
             setUsers(response.data);
         })
     }
 
-    const deleteUser = (id) => {
-        axios.delete(`http://localhost/E-commerce-webshop/server/${id}/delete`).then(function(response){
-            //console.log(response.data);
-            setUsers(response.data);
-            window.location.reload(false);
-        });
-    }
     //console.log(users)
   return (
     <div>
@@ -48,13 +41,8 @@ const DisplayUser = () => {
             {users.map((user, key) => 
                 <tr key={key}>
                     <td>{user.id}</td>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
-                    <td>{user.email}</td>
-                    <td>
-                        <Link to={`/user/${user.id}/edit`} style={{marginRight: "10px"}}>Edit</Link>
-                        <button  onClick={() => deleteUser(user.id)}>delete</button>
-                    </td>
+                    <td>{user.name}</td>
+                    <td>{user.sub_name}</td>
                 </tr>
             )}
 
