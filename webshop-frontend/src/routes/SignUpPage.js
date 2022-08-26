@@ -40,7 +40,7 @@ const checkPassword = (e) => {
 }
 
 const handleForm = () => {
-    axios.post('http://localhost/E-commerce-webshop/server/Model/User.php', inputs)
+    axios.post('http://becode.localhost/SCRUM/E-commerce-webshop/server/Model/User.php', inputs)
     console.log(inputs)
 }
 
