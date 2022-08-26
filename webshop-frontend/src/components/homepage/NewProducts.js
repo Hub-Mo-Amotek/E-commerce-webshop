@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 const NewProducts = () => {
     //TODO: remove addToCart-function + import the functionality.
 
-    const productsInCartList = [
+    const productsList = [
         {
             id: 111,
             imageAlt: 'Pikachu',
@@ -38,7 +38,7 @@ const NewProducts = () => {
         }
     ];
 
-    let [products, setProducts] = useState(productsInCartList);
+    let [products, setProducts] = useState(productsList);
 
     function addToCart(id) {
         //TODO: remove this function.
@@ -70,8 +70,8 @@ const NewProducts = () => {
                                         </button>*/}
                                     {/*END WISH-LIST*/}
                                     <img
-                                        loading="lazy" alt={product.title}
-                                        className="object-contain w-full h-60 pt-3" src={product.image}/>
+                                        loading="lazy" alt={product.imageAlt}
+                                        className="object-contain w-full h-60 pt-3" src={product.imageSrc}/>
                                     {/*NAME + PRICE + ADD TO CART*/}
                                     <div className="p-4">
                                         {/*NAME + PRICE*/}
@@ -91,7 +91,7 @@ const NewProducts = () => {
 
                                 {/*BUTTON ADD TO CART*/}
                                 <button type="submit" className="add-to-cart flex items-center justify-center
-                                            w-full px-8 py-4 mt-4 rounded-sm bg-yellow-500"> onClick={() => addToCart(product.id)}
+                                            w-full px-8 py-4 mt-4 rounded-sm bg-yellow-500" onClick={() => addToCart(product.id)}>
                                     <span className="text-sm font-medium">
                                     Add to Cart
                                     </span>
