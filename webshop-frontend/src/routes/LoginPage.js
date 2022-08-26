@@ -33,7 +33,7 @@ let [alert, setAlert] = useState();
           navigate('/my-account');
           refreshPage();
       }else{
-          setAlert(<Alert clr="red" alertTitel="something went wrong!" alertInfo="try again, or make a new account"/>)
+          setAlert(<Alert clr='red' alertTitel="something went wrong!" alertInfo="try again, or make a new account"/>)
       }
       
     });
