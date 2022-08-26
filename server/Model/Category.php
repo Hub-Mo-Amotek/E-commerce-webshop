@@ -26,6 +26,17 @@ class Category extends DataConnection {
             }
             echo json_encode($data);
         break;
+            case 'GET':
+                $sql = "
+                        SELECT c.id, c.name, sub_category.sub_name
+                        FROM sub_category
+                        JOIN category c on c.id = sub_category.category_id
+                        ";
+                $stmt = $this->connect()->prepare($sql);
+                $stmt->execute();
+                $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                echo json_encode($data);
+                break;
         }
 }
 }
