@@ -5,10 +5,10 @@ const CheckoutPage = () => {
     const [message, setMessage] = useState('');
     const [error, setError] = useState(null);
 
+
     function isValidEmail(email) {
         return /\S+@\S+\.\S+/.test(email);
     }
-
     const handleEmailChange = event => {
         if (!isValidEmail(event.target.value)) {
             setError('Email is invalid');
@@ -17,6 +17,7 @@ const CheckoutPage = () => {
         }
         setMessage(event.target.value);
     };
+
 
 
     return (
@@ -39,7 +40,9 @@ const CheckoutPage = () => {
                                         <div className="mt-1">
                                             <input type="text" id="first-name" name="first-name"
                                                    autocomplete="given-name"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            required/>
                                         </div>
                                     </div>
 
@@ -50,7 +53,9 @@ const CheckoutPage = () => {
                                         <div className="mt-1">
                                             <input type="text" id="last-name" name="last-name"
                                                    autocomplete="family-name"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            required/>
                                         </div>
                                     </div>
 
@@ -70,7 +75,9 @@ const CheckoutPage = () => {
                                                className="block text-sm font-medium text-gray-700">Address</label>
                                         <div className="mt-1">
                                             <input type="text" name="address" id="address" autocomplete="street-address"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                   required/>
                                         </div>
                                     </div>
 
@@ -91,7 +98,9 @@ const CheckoutPage = () => {
                                                className="block text-sm font-medium text-gray-700">City</label>
                                         <div className="mt-1">
                                             <input type="text" name="city" id="city" autocomplete="address-level2"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            required/>
                                         </div>
                                     </div>
 
@@ -108,14 +117,15 @@ const CheckoutPage = () => {
                                     </div>
 
                                     {/*--PROVINCE--*/}
-                                    <div>
+                                    {/*<div>
                                         <label for="region" className="block text-sm font-medium text-gray-700">State /
                                             Province</label>
                                         <div className="mt-1">
                                             <input type="text" name="region" id="region" autocomplete="address-level1"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                                         </div>
-                                    </div>
+                                    </div>*/}
 
                                     {/*--POSTAL CODE--*/}
                                     <div>
@@ -124,7 +134,9 @@ const CheckoutPage = () => {
                                         <div className="mt-1">
                                             <input type="text" name="postal-code" id="postal-code"
                                                    autocomplete="postal-code"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                            required/>
                                         </div>
                                     </div>
 
@@ -134,7 +146,8 @@ const CheckoutPage = () => {
                                                className="block text-sm font-medium text-gray-700">Phone</label>
                                         <div className="mt-1">
                                             <input type="text" name="phone" id="phone" autocomplete="tel"
-                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
+                                                   className="py-2 px-3 block w-full border border-gray-300 rounded-md
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"/>
                                         </div>
                                     </div>
 
@@ -145,8 +158,8 @@ const CheckoutPage = () => {
                                         <div className="mt-1">
                                             <input type="text" name="email" id="email" autocomplete="email"
                                                    className="py-2 px-3 block w-full border border-gray-300 rounded-md
-                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"v
-                                                   alue={message}
+                                                   shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                                                   value={message}
                                                    onChange={handleEmailChange}
                                                    required/>
                                             {error}
@@ -157,7 +170,7 @@ const CheckoutPage = () => {
                                 </div>
                             </div>
                             {/*SAVE CONTACT DATA? only for user with account*/}
-                            <div className="mt-6 flex space-x-2">
+                            {/*<div className="mt-6 flex space-x-2">
                                 <div className="flex items-center h-5">
                                     <input id="saveData" name="saveData" type="checkbox"
                                            className="h-4 w-4 border-gray-300 rounded text-indigo-600 focus:ring-indigo-500"/>
@@ -165,7 +178,7 @@ const CheckoutPage = () => {
                                 <label htmlFor="same-as-shipping" className="text-sm font-medium text-gray-900">Save my
                                     contact details
                                     for the future</label>
-                            </div>
+                            </div>*/}
 
                             {/*BILLING = SHIPPING?*/}
                             <div className="mt-6 flex space-x-2">
