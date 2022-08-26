@@ -21,6 +21,7 @@ const SignUpPage = () => {
             setError(null);
         }
         setMessage(event.target.value);
+        setInputs(values => ({...values, [event.target.name]: event.target.value}));
     };
 
     const handleChange = (event) => {
