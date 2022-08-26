@@ -15,7 +15,7 @@ const Form = () => {
     const handleForm = (e) => {
         e.preventDefault();
 
-        axios.post('http://localhost/E-commerce-webshop/server/Model/Category.php', inputs)
+        axios.post('http://becode.localhost/SCRUM/E-commerce-webshop/server/Model/Category.php', inputs)
         console.log(inputs)
     }
     
