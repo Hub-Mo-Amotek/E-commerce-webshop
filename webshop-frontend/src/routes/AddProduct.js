@@ -19,14 +19,10 @@ const AddProduct = () => {
         console.log(inputs.name)
     }
 
+
   return (
     <div className='AddProduct'>
-        
-
-
-
-
-      	<div className="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        	<div className="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
 		    <div className="max-w-md w-full">
                 <div>
                     <img className="mx-auto h-12 w-auto" src="./assets/images/gbay-logo.png" alt="Workflow"/>
