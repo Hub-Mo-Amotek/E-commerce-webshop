@@ -1,5 +1,7 @@
 <?php
 
+require '../db.php';
+
 class HomeController extends DataConnection {
 
     public function render() {
