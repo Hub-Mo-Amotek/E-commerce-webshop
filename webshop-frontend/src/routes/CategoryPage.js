@@ -35,11 +35,11 @@ const CategoryPage = () => {
         {allProducts.map((product, key) => 
         <Link to={`/product-detail/${product.id}/`} className="relative block border border-gray-100"  key={key}>
             {/* <a href="/product-detail/" > */}
-                <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
-                </button>
+                {/* <button type="button" name="wishlist" className="absolute p-2 text-white bg-black rounded-full right-4 top-4">
+                </button> */}
                 {/*Product Image*/}
-                <div className='object-cover w-full h-72 content-center'>
-                <img loading="lazy" alt="Goku" className='w-56 pl-6' src={"./assets/images/products/"+product.primary_image} /></div>
+                <div className='object-cover w-full h-72'>
+                <img loading="lazy" alt="Goku" className='w-full h-full pl-6' src={"./assets/images/products/"+product.primary_image} /></div>
                 <div className="p-6">
                     {/*Product Title*/}
                     <h2 className="font-semibold text-sm">
