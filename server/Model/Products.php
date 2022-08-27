@@ -38,10 +38,37 @@ class Products extends DataConnection {
                 echo json_encode($data);
                 break;
             case 'GET':
-                $sql = "SELECT id,name,primary_image, price FROM product WHERE quantity > 0 ";//LIMIT 4
-                $stmt = $this->connect()->prepare($sql);
-                $stmt->execute();
-                $allProductsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $pathData = explode('?', $_SERVER['REQUEST_URI']);
+                if($pathData[1] == 'newProducts'){
+                    /**query to display new products on home page */
+                    print_r($pathData);
+                    $sql = "select name,primary_image,price from product
+                    where quantity > 0
+                    order by created_at DESC
+                    limit 4;";
+                    print_r($sql);
+                    $stmt = $this->connect()->prepare($sql);
+                    $stmt->execute();
+                    $allProductsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    print_r($allProductsData);
+                } else{
+                    $sql = "SELECT id,name,primary_image,price FROM product WHERE quantity > 0 ";
+                    $path = explode('/', $_SERVER['REQUEST_URI']);
+                    //  print_r($path[5]);
+                    if(isset($path[5]) && is_numeric($path[5])) {
+                        $sql .= " AND category_id = :id";
+                    // print_r($sql);
+                        $stmt = $this->connect()->prepare($sql);
+                        $stmt->bindParam(':id', $path[5]);
+                        $stmt->execute();
+                        $allProductsData = $stmt->fetchALL(PDO::FETCH_ASSOC);
+                        //print_r($allProductsData);
+                    } else{               
+                        $stmt = $this->connect()->prepare($sql);
+                        $stmt->execute();
+                        $allProductsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    }
+                }
                 echo json_encode($allProductsData);
                 break;
         }
