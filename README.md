@@ -55,7 +55,7 @@ IT WOULD BE NICE TO HAVE:
     only certain items from the platform can be bought.
     - Extra pages: About us, contact us, delivery, privacy, ….
 
-HOW WE WANT IT TO LOOK LIKT:
+HOW WE WANT IT TO LOOK LIKE:
     - Not like bol.com, thats way too dry.
     - Lifely interactions colours animations, please"
 ```
@@ -166,9 +166,9 @@ It was, in my opinion an interesting meeting in which we could order tickets acc
 Priority would now be displaying the products, the functionality of the "add to cart"-button, completing the checkout 
 and finalizing payment, log-in and log-out, seller-page.  
 
-Everybody seemed to like working with tickets. 
+Everybody likes working with tickets. It works motivational to see the list of tickets, in the done-column grow.
 
-Things seemed to be going slower than we all wanted them to go.  We went over the estimated times.
+Things went slower than we all wanted them to go.  We went over the estimated times.
 But that's fine.  I made clear in the beginning, these were estimations and not deadlines.
 I know for a fact we are all working hard.
 
