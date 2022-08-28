@@ -40,7 +40,7 @@ Played by our coaches.  Yes, they did a personality-split.  Can't ask the coach
 what the client wants or the other way around.
 ```
 "WE WANT: 
-    - a websiste like eBay but for geekie stuff with different categories, lik Pokemon, Dragonball,...
+    - a website like eBay but for geekie stuff with different categories, lik Pokemon, Dragonball,...
     - Every user can buy and sell.
     - Their is an option to Login and Logout.
     - Emails will be sent to communicate progress of orders: bought & sold.
@@ -212,7 +212,17 @@ your tekst here Moke!
 
 ### Zeno: Full-stack
 ```
-your tekst here Zenoke!
+I'm happy with how the team did. Personally I found I could have done better. Because of personal stuff I couldn't really focus 
+the full 100%. This is not fair to the team but it's not always easy to not think about private matters. This for me slowed
+down my work. I loved creating the database with Mo and Snehal. Afterwards I made a logo and header, we wanted 3D but 
+lost a lot of time with the rendering (old computer). Afterwards I had some issues connecting to the database, frustrated me a lot.
+Eventually it was a path issue, even more frustrating. I felt like we did our best, but personally I didn't feel like I was 
+able to use my full potential for this project. I found the communication at the beginning lacking, we where all shouting through eachother
+not a lot of structure. This improved a lot in the days we worked more on the project, but it also cost us a lot of time. We also 
+lost time because certain components had to be re-made.
+
+None the less it was a good learning experience and I'm happy I had the opportunity to work with other classmates I hadn't worked with yet.
+I'm proud of you all, and you're all kicking web dev ass. Keep up the work!
 ```
 
 ### Snehal
