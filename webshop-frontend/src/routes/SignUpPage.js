@@ -16,11 +16,13 @@ const SignUpPage = () => {
 
     const handleEmailChange = event => {
         if (!isValidEmail(event.target.value)) {
-            setError('Email is invalid');
+            setAlert(<Alert clr='orange' alertTitel='Email is invalid' alertInfo='try again!'/>);
         } else {
             setError(null);
         }
         setMessage(event.target.value);
+        setInputs(values => ({...values, [event.target.name]: event.target.value}));
+
     };
 
     const handleChange = (event) => {
