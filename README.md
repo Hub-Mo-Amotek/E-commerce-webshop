@@ -79,7 +79,7 @@ which languages are we going to use? who wants to do what (front- back-end or bo
     - REACT
     - TAILWIND
 
-Scrum is all about working in team, communicating, making decisions together.  And that went well wright from
+Scrum is all about working in team, communicating, making decisions together.  And that went a little wonky right from
 the start.  It was clear which features were important.  Ideas started popping up in our minds. And with that,
 we started to create our SCRUM-board.
 
@@ -99,8 +99,10 @@ STORIES:
 
 FROM THERE ON OUT:
 - Break the stories down until tickets were ready for the take.  Boy-oh-Boy, the list was long.  
-With an optimistic team, like ours, that was a good thingy.
-- I, as the SCRUM master did some research to find out what my responsibilities were:
+With an optimistic team, like ours, that was a good thingy.  
+- Creating tickets together felt like time-loss to the team, so while I worked on tickets, the rest created wireframes.
+  The moment, I realized we needed to do this together, I did get resistance.
+- That's why I, as the SCRUM master did some research to find out what my responsibilities were:
 
 ![img_1.png](IMG-README/scrumMasterMeme.png)
 
@@ -162,17 +164,20 @@ a sprint is all about.
     - Is it realistic to finish the stories by the delivery-date?
     - What is absolute priority?
     - ...
-It was, in my opinion an interesting meeting in which we could order tickets according their importance.
+It was, in my opinion an interesting meeting in which we could order tickets according their importance.  It took a while to get 
+everybody's to stop working and get full attention.  As I didn't let go, we started prioritising:
 Priority would now be displaying the products, the functionality of the "add to cart"-button, completing the checkout 
 and finalizing payment, log-in and log-out, seller-page.  
 
-Everybody likes working with tickets. It works motivational to see the list of tickets, in the done-column grow.
+Everybody likes working with tickets from the SCRUM-board. Although, they aren't consulting and using it as much as it could be used.
+That's a pitty, it works motivational to see the list of tickets, in the done-column grow.
 
-Things went slower than we all wanted them to go.  We went over the estimated times.
-But that's fine.  I made clear in the beginning, these were estimations and not deadlines.
+Things went slower than we all wanted them to go.  We went over the estimated times. And realised everything went smoother in our 
+heads then in reality.  But that's fine.  I made clear in the beginning, these were estimations and not deadlines.
 I know for a fact we are all working hard.
 
-Everybody seems to agree, that communication is going really well.
+Everybody seems to agree, that communication is going better as time passes.
+Also the Git is going well.
 
 There is still optimism to be found on finishing everything in time.  Although wanting to accomplish and being able to do so,
 are 2 different things.  Time will tell.
@@ -192,9 +197,10 @@ turn them into couches.  And then we wil no longer take this course, but a curse
 ## LOOKING BACK:
 ### Wendy: SCRUM-master + front-end
 ```
-I am proud of my team!  We worked damn hard, commucicated really well and realised nice things.  The most important,
-we all learned a lot.  Pushing and pulling went really smooth:  a message was sent out every time when pulling needed to be 
-done.  
+I am proud of my team!  We worked damn hard, commucication was not the best at all times but I have the feeling, all opinions were shared. 
+Maybe, in the beginning it was not easy to accept the fact I was there to protect you all from diviating the priority path.  
+We realised nice things.  The most important, we all learned a lot.  Pushing and pulling went really smooth (could have been more freequent):  
+a message was sent out every time when pulling needed to be done.  
 
 We bumped our heads, a few times, here and there, which consumed more time then expected.  It never feels 
 good at first, but then after we crawled up again and realized it's good to bump! Those are the moments when the "magic" 
@@ -206,9 +212,18 @@ Due to not a must and lack of time, these needed to be commented for the client.
 ```
 
 ### Mo: Full-stack 
-```
-your tekst here Moke!
-```
+
+sooo. 
+i liked this exercise alot. learned and practised communication between front, backend and database. first disagreed with using php in the backend but started liking it the more we worked with it.
+
+i had a healthy "issue solving thingy" going on, wich means i could find solutions for my problems and implement them until i had to upload images into the database.
+
+![sdc](https://c.tenor.com/YAGXHrTPEocAAAAC/fuckit-work.gif)
+
+ i was to stubborn so i lost alot of time trying to figure this out. i see now that i had to ask for help much sooner and change strategy. im sorry team!
+
+still loved everything about this project. i love(d) my team and everyone worked hard on this project. proud of everyone! 
+
 
 ### Zeno: Full-stack
 ```
@@ -226,10 +241,23 @@ I'm proud of you all, and you're all kicking web dev ass. Keep up the work!
 ```
 
 ### Snehal
-```
-your tekst here Snehalleke!
-```
-  
+  >  I learned a lot theough this project.  
+> 
+  > Had taken part in each and every phase of project, from planning till the end result. 
+>
+  > In the beginning we thought about different front-back languages Vanilla JS and PHP(MVC), MYSQL.
+>
+  >But, afterwards we changed it to some spicy combination like Tailwind, React, PHP and MariaDb. 
+>
+ > So, we were in learning and implmenting phase. Learned how to use axios to communicate between frontend and backend.
+>
+  > In the beginning, I didn't agree with Wendy's way of scrum things but afterwards as she explains things I like her way and follow the task accordingly.
+>
+> And last but not least, during this group project journey I learned a lot from everyone.  
+> **Wendy** : keep things on track. Take everyone together.  
+> **Zeno** : Stick to the task and finish it above expectation.  
+> **Mo** : Stay calm and keep working. Don't stress.  
+> **Vlad** : Search and struggle until you get solution.
 
 
     

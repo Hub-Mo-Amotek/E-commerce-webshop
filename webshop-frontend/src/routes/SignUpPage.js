@@ -1,9 +1,11 @@
 import {useState} from "react";
 import axios from "axios";
 import Alert from "../components/Alert";
+import { useNavigate } from "react-router-dom";
 
 
 const SignUpPage = () => {
+    let navigate = useNavigate();
 
     const [inputs, setInputs] = useState([]);
     const [message, setMessage] = useState('');
@@ -44,12 +46,13 @@ const checkPassword = (e) => {
 const handleForm = () => {
     axios.post('http://becode.localhost/SCRUM/E-commerce-webshop/server/Model/User.php', inputs)
     console.log(inputs)
+    navigate('/Login');
 }
 
 return (
     <div className="bg-grey-lighter min-h-screen flex flex-col">
+                    <div>{alert}</div>
         <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
-            <div>{alert}</div>
             <form onSubmit={checkPassword} className="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                 <h1 className="mb-8 text-3xl text-center">Sign up</h1>
 

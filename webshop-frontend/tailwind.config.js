@@ -13,6 +13,11 @@ module.exports = {
       "color-one": "#accbee",
       "color-two": "#e7f0fd",
       "color-nerdy": "#0091ea",
+
+      "color-red": "#FF0000",
+      "color-green": "#00FF00",
+      "color-orange": "#FFA500",
+
     },
   },
   },
