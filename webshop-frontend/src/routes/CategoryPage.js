@@ -21,7 +21,7 @@ const CategoryPage = () => {
     }, [dataFound]);
     
     function getAllProducts() {
-        axios.get(`http://localhost/E-commerce-webshop/server/Model/Products.php`).then(function(response) {
+        axios.get(`http://localhost/E-commerce-webshop/server/Model/DisplayCategoryData.php`).then(function(response) {
             console.log("response Data",response.data);
             setAllProducts(response.data);
             setDataFound(true);
