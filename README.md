@@ -259,7 +259,16 @@ I'm proud of you all, and you're all kicking web dev ass. Keep up the work!
 > **Mo** : Stay calm and keep working. Don't stress.  
 > **Vlad** : Search and struggle until you get solution.
 
-
+### Postmortem:
+1. We should have started with a smaller goal finish it and then make it grow slowly.
+2. Waste lots of time in image uploading and saving to database.
+3. Need to google more before selecting the front and backend languages, their compatibility in all perspective.
+4. More Tailwind and React Knowledge.
+5. Only one team meber needs to lack motivation to bring all others down. So, choose the team correctly.
+6. More time needed
+7. Start with basic layout and design to get more time to implement functionality.
+8. Made wrong estimation.
+9. The tickets are used more better.
     
 
 
