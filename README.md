@@ -197,9 +197,10 @@ turn them into couches.  And then we wil no longer take this course, but a curse
 ## LOOKING BACK:
 ### Wendy: SCRUM-master + front-end
 ```
-I am proud of my team!  We worked damn hard, commucicated really well and realised nice things.  The most important,
-we all learned a lot.  Pushing and pulling went really smooth:  a message was sent out every time when pulling needed to be 
-done.  
+I am proud of my team!  We worked damn hard, commucication was not the best at all times but I have the feeling, all opinions were shared. 
+Maybe, in the beginning it was not easy to accept the fact I was there to protect you all from diviating the priority path.  
+We realised nice things.  The most important, we all learned a lot.  Pushing and pulling went really smooth (could have been more freequent):  
+a message was sent out every time when pulling needed to be done.  
 
 We bumped our heads, a few times, here and there, which consumed more time then expected.  It never feels 
 good at first, but then after we crawled up again and realized it's good to bump! Those are the moments when the "magic" 
