@@ -196,7 +196,7 @@ turn them into couches.  And then we wil no longer take this course, but a curse
 
 ## LOOKING BACK:
 ### Wendy: SCRUM-master + front-end
-```
+
 I am proud of my team!  We worked damn hard, commucication was not the best at all times but I have the feeling, all opinions were shared. 
 Maybe, in the beginning it was not easy to accept the fact I was there to protect you all from diviating the priority path.  
 We realised nice things.  The most important, we all learned a lot.  Pushing and pulling went really smooth (could have been more freequent):  
@@ -213,7 +213,16 @@ Due to not a must and lack of time, these needed to be commented for the client.
 
 ### Mo: Full-stack 
 ```
-your tekst here Moke!
+sooo. 
+i liked this exercise alot. learned and practised communication between front, backend and database. first disagreed with using php in the backend but started liking it the more we worked with it.
+
+i had a healthy "issue solving thingy" going on, wich means i could find solutions for my problems and implement them until i had to upload images into the database.
+
+![sdc](https://c.tenor.com/YAGXHrTPEocAAAAC/fuckit-work.gif)
+ 
+ i was to stubborn so i lost alot of time trying to figure this out. i see now that i had to ask for help much sooner and change strategy. im sorry team!
+
+still loved everything about this project. i love(d) my team and everyone worked hard on this project. proud of everyone! 
 ```
 
 ### Zeno: Full-stack
