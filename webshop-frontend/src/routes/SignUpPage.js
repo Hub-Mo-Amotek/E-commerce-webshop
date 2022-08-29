@@ -1,9 +1,11 @@
 import {useState} from "react";
 import axios from "axios";
 import Alert from "../components/Alert";
+import { useNavigate } from "react-router-dom";
 
 
 const SignUpPage = () => {
+    let navigate = useNavigate();
 
     const [inputs, setInputs] = useState([]);
     const [message, setMessage] = useState('');
@@ -44,6 +46,7 @@ const checkPassword = (e) => {
 const handleForm = () => {
     axios.post('http://localhost/E-commerce-webshop/server/Model/User.php', inputs)
     console.log(inputs)
+    navigate('/Login');
 }
 
 return (
