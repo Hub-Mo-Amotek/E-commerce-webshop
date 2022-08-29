@@ -1,62 +1,38 @@
-import React, {useState} from 'react'
+import axios from 'axios';
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const ProductDetail = () => {
     //TODO: remove addToCart-function + import the functionality.
-
-    /*const productsCategoryList = [
-        {
-            id: 111,
-            imageAlt: 'Pikachu',
-            imageSrc: './assets/images/gokupng.png',
-            name: 'pikachu',
-            price: 1,
-            quantity: 1,
-            category: 'Pokemon',
-        },
-        {
-            id: 211,
-            imageAlt: 'Lala',
-            imageSrc: './assets/images/gokupng.png',
-            name: 'lala',
-            price: 2,
-            quantity: 1,
-            category: 'Pokemon',
-
-        },
-        {
-            id: 311,
-            imageAlt: 'Po',
-            imageSrc: './assets/images/gokupng.png',
-            name: 'Po',
-            price: 3,
-            quantity: 1,
-            category: 'Pokemon',
-
-        },
-        {
-            id: 411,
-            imageAlt: 'Dipsy',
-            imageSrc: './assets/images/gokupng.png',
-            name: 'Dipsy',
-            price: 4,
-            quantity: 1,
-            category: 'Pokemon',
-
-        }
-    ];*/
-
-    const productSelected = {
-        id: 111,
-        imageAlt: 'Pikachu',
-        imageSrc: './assets/images/gokupng.png',
-        name: 'pikachu',
-        price: 1,
-        quantity: 1,
-        category: 'Pokemon',
-        details: 'Detailed info comes here.'
+    const {id} = useParams();
+    var [productDetail, setproductDetail] = useState([]);
+    var [productFound,setProductFound] = useState(false);
+    var [image,setImage]=useState('');
+    // fixing .map is not a function with this line of code
+    if(!Array.isArray(productDetail)){
+        productDetail = [productDetail];
     }
-
-    let [product, setProduct] = useState(productSelected);
+    useEffect(() => {
+        if(typeof id !== 'undefined'){
+            getProductDetail(id);
+        }
+    }, [productFound,image]);
+    
+    function getProductDetail() {
+        axios.get(`http://localhost/E-commerce-webshop/server/Model/ProductsData.php/${id}`).then(function(response) {
+            setproductDetail(response.data);
+            setProductFound(true);
+        }).catch((error)=> {
+            // handle error
+            console.log(error);
+          }).then(()=>{
+            productDetail.forEach(product=>{
+                setImage("./assets/images/products/"+product.primary_image)
+             })
+         });    
+    }
+        console.log("IMAGE = ",image);
 
     function addToCart(id) {
         //TODO: remove this function.
@@ -65,78 +41,21 @@ const ProductDetail = () => {
     return (
         <div>
             {/* start of product detail section */}
-
             <section className="text-gray-700 body-font overflow-hidden bg-white">
                 <div className="container px-5 py-24 mx-auto">
-                    <div className="lg:w-4/5 mx-auto flex flex-wrap">
+                {productDetail.map((product, key) => 
+                    <div className="lg:w-4/5 mx-auto flex flex-wrap" key={key}>
                         {/*IMAGE*/}
-                        <img alt={product.imageAlt}
-                             className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-                             src={product.imageSrc}/>
-
-                        {/*CATEGORY + NAME + REVIEWS + FACEBOOK + TWITTER + DETAILS + PRICE + ADD TO CART + ADD TO FAVORITES*/}
+                       {/* {setTimeout(() => setPowers(product.primary_image), 3000)} */}
+                        <img alt={product.name} loading="lazy" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={"./assets/images/products/"+product.primary_image}/>
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            {/*CATEGORY*/}
-                            <h2 className="text-sm title-font text-gray-500 tracking-widest">{product.category}</h2>
-                            {/*NAME*/}
+                            <h2 className="text-sm title-font text-gray-500 tracking-widest">{product.catName}</h2>
                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>
-
-                            {/*REVIEWS + FACEBOOK + TWITTER*/}
-                            {/*<div className="flex mb-4">
-                                REVIEWS
-                                <span className="flex items-center">
-                                    <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                    </svg>
-                                    <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                    </svg>
-                                    <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                    </svg>
-                                    <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                        strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                    </svg>
-                                    <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                         strokeWidth="2" className="w-4 h-4 text-red-500" viewBox="0 0 24 24">
-                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                                    </svg>
-                                <span className="text-gray-600 ml-3">4 Reviews</span>
-                                </span>
-
-                                FACEBOOK + TWITTER
-                                <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200">
-                                    FACEBOOK
-                                    <a className="text-gray-500" href="https://facebook.com">
-                                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                         className="w-5 h-5" viewBox="0 0 24 24">
-                                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                                    </svg>
-                                    </a>
-                                    TWITTER
-                                    <a className="ml-2 text-gray-500" href="https://twitter">
-                                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                                         className="w-5 h-5" viewBox="0 0 24 24">
-                                        <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-                                    </svg>
-                                    </a>
-
-                                     <a className="ml-2 text-gray-500" href="http//:google.com"> </a>
-                                </span>
-                            </div>*/}
-
-                            {/*DETAILS*/}
-                            <p className="leading-relaxed">{product.details}</p>
-                            {/*PRICE + ADD TO CART + ADD TO FAVORITES*/}
+                            <p className="leading-relaxed">{product.description}</p>
                             <div className="flex">
                                 {/*PRICE*/}
                                 <span
-                                    className="title-font font-medium text-2xl text-gray-900">€{product.price.toFixed(2)}</span>
-
+                                    className="title-font font-medium text-2xl text-gray-900">€{product.price}</span>
                                 {/*ADD TO CART-BUTTON*/}
                                 <button type="submit" className="flex ml-auto text-white bg-red-500 border-0 py-2 px-6 focus:outline-none
                                     hover:bg-red-600 rounded" onClick={() => addToCart(product.id)}>
@@ -144,20 +63,10 @@ const ProductDetail = () => {
                                     Add to Cart
                                     </span>
                                 </button>
-
-                                {/*ADD TO FAVORITES-BUTTON*/}
-                                {/*<button
-                                    className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
-                                    <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round"
-                                         strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                                        <path
-                                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"></path>
-                                    </svg>
-                                </button>*/}
-
                             </div>
                         </div>
                     </div>
+                )}
                 </div>
             </section>
             {/* end of product detail section */}
