@@ -41,7 +41,7 @@ class Products extends DataConnection {
                 $pathData = explode('?', $_SERVER['REQUEST_URI']);
                 if($pathData[1] == 'newProducts'){
                     /**query to display new products on home page */
-                    $sql = "select name,primary_image,price from product
+                    $sql = "select id,name,primary_image,price from product
                     where quantity > 0
                     order by created_at DESC
                     limit 4;";
