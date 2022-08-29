@@ -212,18 +212,18 @@ Due to not a must and lack of time, these needed to be commented for the client.
 ```
 
 ### Mo: Full-stack 
-```
+
 sooo. 
 i liked this exercise alot. learned and practised communication between front, backend and database. first disagreed with using php in the backend but started liking it the more we worked with it.
 
 i had a healthy "issue solving thingy" going on, wich means i could find solutions for my problems and implement them until i had to upload images into the database.
-```
+
 ![sdc](https://c.tenor.com/YAGXHrTPEocAAAAC/fuckit-work.gif)
- ```
+
  i was to stubborn so i lost alot of time trying to figure this out. i see now that i had to ask for help much sooner and change strategy. im sorry team!
 
 still loved everything about this project. i love(d) my team and everyone worked hard on this project. proud of everyone! 
-```
+
 
 ### Zeno: Full-stack
 ```
