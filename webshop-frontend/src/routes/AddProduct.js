@@ -9,16 +9,7 @@ const AddProduct = () => {
         const name = event.target.name;
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}));
-
-        // if(name !== 'primary_image'){
-        //     setInputs(values => ({...values, [name]: value}));
-        // } else{
-        //     setFile(URL.createObjectURL(event.target.files[0]));
-        //     const name1 = event.target.name;
-        //     console.log(file);
-        //     setInputs(values => ({...values, [name1]: file}));
-            
-        // }
+        
     }
 
 
@@ -28,14 +19,10 @@ const AddProduct = () => {
         console.log(inputs.name)
     }
 
+
   return (
     <div className='AddProduct'>
-        
-
-
-
-
-      	<div className="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        	<div className="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
 		    <div className="max-w-md w-full">
                 <div>
                     <img className="mx-auto h-12 w-auto" src="./assets/images/gbay-logo.png" alt="Workflow"/>
@@ -153,6 +140,7 @@ const AddProduct = () => {
                 </form>
             </div>
         </div>
+       
     </div>
   )
 }
