@@ -47,7 +47,7 @@ const ProductDetail = () => {
                     <div className="lg:w-4/5 mx-auto flex flex-wrap" key={key}>
                         {/*IMAGE*/}
                        {/* {setTimeout(() => setPowers(product.primary_image), 3000)} */}
-                        <img alt={product.name} loading="lazy" className="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src={"./assets/images/products/"+product.primary_image}/>
+                        <img alt={product.name} loading="lazy" className="lg:w-1/2 w-48 object-cover object-center rounded border border-gray-200" src={"http://localhost:3000/assets/images/gbayBoy.png"}/>
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
                             <h2 className="text-sm title-font text-gray-500 tracking-widest">{product.catName}</h2>
                             <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">{product.name}</h1>

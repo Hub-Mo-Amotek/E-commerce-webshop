@@ -48,7 +48,7 @@ let test=[];
                     <div className="grid grid-cols-1 mt-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-6">
                     {newProductsData.map((product,key) => 
                         <Link to={`/product-detail/${product.id}/`}  key={key}>
-                            <div className="relative block border border-gray-100"  key={product.id}>
+                            <div className="relative block border border-gray-100"  key={key}>
                                 <div className='object-cover w-full h-72'>
                                     <img loading="lazy" alt={product.name} className='w-full h-full pl-6' 
                                     src="https://picsum.photos/200/300"
