@@ -41,16 +41,13 @@ class Products extends DataConnection {
                 $pathData = explode('?', $_SERVER['REQUEST_URI']);
                 if($pathData[1] == 'newProducts'){
                     /**query to display new products on home page */
-                    print_r($pathData);
                     $sql = "select name,primary_image,price from product
                     where quantity > 0
                     order by created_at DESC
                     limit 4;";
-                    print_r($sql);
                     $stmt = $this->connect()->prepare($sql);
                     $stmt->execute();
                     $allProductsData = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                    print_r($allProductsData);
                 } else{
                     $sql = "SELECT id,name,primary_image,price FROM product WHERE quantity > 0 ";
                     $path = explode('/', $_SERVER['REQUEST_URI']);

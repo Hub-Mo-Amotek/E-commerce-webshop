@@ -19,8 +19,9 @@ let test=[];
     
     function getNewProductsData() {
         axios.get(`http://localhost/E-commerce-webshop/server/Model/Products.php?newProducts`).then(function(response) {
+            console.log('res', JSON.stringify(response.data))
             setnewProductsData(response.data);
-           setTimeout(setProductFound(true),4000,true);
+           //setTimeout(setProductFound(true),4000,true);
         }).then(()=>{
             console.log(productFound);console.log(newProductsData);
              //if(newProductsData.length == 4 && productFound ==true){
@@ -34,6 +35,7 @@ let test=[];
     function addToCart(id) {
         //TODO: remove this function.
     }
+    console.log('newproductdata', newProductsData);
     return (
         <div className='NewProducts'>
             {/* start of New products section */}
@@ -49,7 +51,8 @@ let test=[];
                             <div className="relative block border border-gray-100"  key={product.id}>
                                 <div className='object-cover w-full h-72'>
                                     <img loading="lazy" alt={product.name} className='w-full h-full pl-6' 
-                                    src={"./assets/images/products/"+product.primary_image} />
+                                    src="https://picsum.photos/200/300"
+                                    />
                                 </div>
                                 <div className="p-6">
                                     <h2 className="font-semibold text-sm">{product.name}<br/>
