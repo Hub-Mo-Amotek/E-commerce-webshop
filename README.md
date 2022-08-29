@@ -232,17 +232,23 @@ I'm proud of you all, and you're all kicking web dev ass. Keep up the work!
 ```
 
 ### Snehal
-    I learned a lot theough this project. Had taken part in each and every phase of project from planning till the end result.
-    In the beginning we thought about different front-back languages and afterwards we changed it to some spicy combination like Tailwind, React, PHP and MariaDb. So, we were in learning and implmenting phase. Learned how to use axios to communicate between frontend and backend.
-    In the beginning, I didn't agree with Wendy's way of scrum things but afterwards as she explains things I like her way and follow the task accordingly.
-
-    And last but not least, during this group project journey I learned a lot from everyone.
-    Wendy : keep things on track. Take everyone together.
-    Zeno : Stick to the task and finish it above expectation.
-    Mo : Stay calm and keep working. Don't stress.
-    Vlad : Search and struggle until you get solution.
-
-  
+  >  I learned a lot theough this project.  
+> 
+  > Had taken part in each and every phase of project, from planning till the end result. 
+>
+  > In the beginning we thought about different front-back languages Vanilla JS and PHP(MVC), MYSQL.
+>
+  >But, afterwards we changed it to some spicy combination like Tailwind, React, PHP and MariaDb. 
+>
+ > So, we were in learning and implmenting phase. Learned how to use axios to communicate between frontend and backend.
+>
+  > In the beginning, I didn't agree with Wendy's way of scrum things but afterwards as she explains things I like her way and follow the task accordingly.
+>
+> And last but not least, during this group project journey I learned a lot from everyone.  
+> **Wendy** : keep things on track. Take everyone together.  
+> **Zeno** : Stick to the task and finish it above expectation.  
+> **Mo** : Stay calm and keep working. Don't stress.  
+> **Vlad** : Search and struggle until you get solution.
 
 
     
