@@ -11,7 +11,7 @@ const MyAccount = () => {
         if(auth === null){
           navigate('/Login');
         }
-}, []);
+}, [navigate]);
 
   return (
     <div>
