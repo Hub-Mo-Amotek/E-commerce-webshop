@@ -40,7 +40,7 @@ const NavLinks = () => {
                                                     <h1 className="text-lg font-semibold">{gbaySublinks.Head}</h1>
                                                     {gbaySublinks.sublink.map((smallLink)=>(
                                                         <li className="text-sm text-gray-600 my-2.5">
-                                                            <Link to={smallLink.link} className="hover:text-color-nerdy">{smallLink.name}</Link>
+                                                            <Link to={`/categorypage`} className="hover:text-color-nerdy">{smallLink.name}</Link>
                                                         </li>
                                                     ))}
                                                 </div>
@@ -78,7 +78,7 @@ const NavLinks = () => {
                                     >
                                         {gbaySublinks.sublink.map((smallLink) => (
                                             <li className="py-3 pl-14">
-                                                <Link to={smallLink.link} className="hover:text-color-nerdy">{smallLink.name}</Link>
+                                                <Link to={`/categorypage`} className="hover:text-color-nerdy">{smallLink.name}</Link>
                                             </li>
                                         ))}
                                     </div>
