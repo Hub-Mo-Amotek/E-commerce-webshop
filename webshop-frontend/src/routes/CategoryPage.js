@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 const CategoryPage = () => {
     const {id} = useParams();
@@ -11,37 +11,40 @@ const CategoryPage = () => {
     if(!Array.isArray(allProducts)){
         allProducts = [allProducts];
     }
-    console.log("Id = ",id);
+   // console.log("Id = ",id);
     useEffect(() => {
-        //    if(id){
-        //         getProductsByCategoryId(id);
-        //    } else{
-             getAllProducts();
-        //    }
+           if(typeof id !== 'undefined'){
+                getProductsByCategoryId(id);
+           }else{
+                getAllProducts();
+            }
     }, [dataFound]);
     
     function getAllProducts() {
-            axios.get('http://localhost/E-commerce-webshop/server/Model/Products.php').then(function(response) {
-                console.log("response Data",response.data);
-                setAllProducts(response.data);
-                setDataFound(true);
-            }).then(()=>{
-                allProducts.forEach(product=>{
-                console.log("product",product);
-            })
+        axios.get(`http://localhost/E-commerce-webshop/server/Model/Products.php`).then(function(response) {
+            console.log("response Data",response.data);
+            setAllProducts(response.data);
+            setDataFound(true);
+        }).then(()=>{
+            allProducts.forEach(product=>{
+            console.log("product without cat",product);
+        })
         });  
+        console.log("I am Called no category id");
     }
-    // function getProductsByCategoryId(categoryId) {
-    //     axios.get(`http://localhost/E-commerce-webshop/server/Model/Products.php/${categoryId}`).then(function(response) {
-    //         console.log("response Data",response.data);
-    //         // setAllProducts(response.data);
-    //         // setDataFound(true);
-    //     }).then(()=>{
-    //     //     allProducts.forEach(product=>{
-    //         //  console.log("product",product);
-    //     // })
-    // });  
-    // }
+    function getProductsByCategoryId(id) {
+        axios.get(`http://localhost/E-commerce-webshop/server/Model/Products.php/${id}`).then(function(response) {
+            console.log("response Data",response.data);
+             setAllProducts(response.data);
+             setDataFound(true);
+        }).then(()=>{
+            allProducts.forEach(product=>{
+            console.log("cat product",product);
+         })
+        
+        });  
+        console.log("I m called with category Id");
+    }
   return (
     <div className='CategoryPage'>
         <div className="grid grid-cols-1 mt-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-8 p-6">
@@ -53,13 +56,13 @@ const CategoryPage = () => {
                 </button> */}
                 {/*Product Image*/}
                 <div className='object-cover w-full h-72'>
-                <img loading="lazy" alt="Goku" className='w-full h-full pl-6' src={"./assets/images/products/"+product.primary_image} /></div>
+                <img loading="lazy" alt={product.name} className='w-full h-full pl-6' src={"./assets/images/products/"+product.primary_image} /></div>
                 <div className="p-6">
                     {/*Product Title*/}
                     <h2 className="font-semibold text-sm">
                     {product.name}
                         <br/>
-                        <span className="font-normal">Super Hero Ichibansho Goku</span>
+                        <span className="font-normal">{product.name}</span>
                     </h2>
                     {/*Product Price*/}
                     <p className="text-base font-bold">

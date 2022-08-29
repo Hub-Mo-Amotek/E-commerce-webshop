@@ -29,9 +29,11 @@ function App() {
           <Route exact path="/Login" element={<LoginPage />} />
           <Route exact path="/Password" element={<ResetPasswordPage />} />
           <Route exact path="/SignUp" element={<SignUpPage />} />
-          <Route exact path="/product-detail" element={<ProductDetail />} />
+          <Route exact path="/product-detail/:id" element={<ProductDetail />} />
+          <Route exact path="/product-detail/:id/" element={<ProductDetail />} />
           <Route exact path="/category" element={<ProductsPage />} />
-          <Route exact path="/categorypage" element={<CategoryPage />} />
+          <Route exact path="/categorypage/" element={<CategoryPage />} />
+          <Route exact path="/categorypage/:id" element={<CategoryPage />} />
           <Route exact path="/cart" element={<CartPage />} />
           <Route exact path="/test-form" element={<Form />} />
           <Route exact path="*" element={<ErrorPage />} />
