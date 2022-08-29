@@ -28,6 +28,23 @@ class User extends DataConnection {
                     $data = ['status' => 0, 'message' => "Failed to create record."];
                 }
                 echo json_encode($data);
+                break;
+                case 'GET':
+                    $sql = "SELECT * FROM user";
+                    $path = explode('/', $_SERVER['REQUEST_URI']);
+                    var_dump($_SERVER['REQUEST_URI']); exit;
+                    if(isset($path[4]) && is_numeric($path[4])) {
+                        $sql .= " WHERE id = :id";
+                        $stmt = $this->connect()->prepare($sql);
+                        $stmt->bindParam(':id', $path[4]);
+                        $stmt->execute();
+                        $users = $stmt->fetch(PDO::FETCH_ASSOC);
+                    } else {
+                        $stmt = $this->connect()->prepare($sql);
+                        $stmt->execute();
+                        $users = $stmt->fetch(PDO::FETCH_ASSOC);
+                    }
+                    echo json_encode($users);
         }
 }
 }
