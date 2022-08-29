@@ -11,6 +11,8 @@ const LogInButton = () => {
     const [authe, setAuthe] = useState();
     const [name, setName] = useState();
     let [log, setLog] = useState();
+    let [style, setStyle] = useState();
+
 
     useEffect(()=>{
             let auth = localStorage.getItem('id');
@@ -19,8 +21,10 @@ const LogInButton = () => {
 
             if(auth){
                     setLog('Logout');
+                    setStyle("inline-flex items-center sm:mx-0 lg:mx-2 px-4 py-2 bg-red-200 hover:bg-red-300 text-red-800 text-sm font-medium rounded-md")
                   }else{
                     setLog('Login');
+                    setStyle("inline-flex items-center sm:mx-0 lg:mx-2 px-4 py-2 bg-green-200 hover:bg-green-300 text-green-800 text-sm font-medium rounded-md")
                   }
 
             setAuthe(auth);
@@ -41,7 +45,7 @@ const LogInButton = () => {
 
     return (
         <button type="button"
-                className="inline-flex items-center sm:mx-0 lg:mx-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm font-medium rounded-md"
+                className={style}
                 onClick={handleLogAction}>
             {log}
         </button>
