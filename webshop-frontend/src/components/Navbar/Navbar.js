@@ -28,7 +28,7 @@ const Navbar = () => {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/category" className="py-7 px-3 inline-block">
+                    <Link to={`/categorypage`} className="py-7 px-3 inline-block">
                             All Products
                         </Link>
                     </li>
