@@ -79,7 +79,7 @@ which languages are we going to use? who wants to do what (front- back-end or bo
     - REACT
     - TAILWIND
 
-Scrum is all about working in team, communicating, making decisions together.  And that went well wright from
+Scrum is all about working in team, communicating, making decisions together.  And that went a little wonky right from
 the start.  It was clear which features were important.  Ideas started popping up in our minds. And with that,
 we started to create our SCRUM-board.
 
@@ -99,8 +99,10 @@ STORIES:
 
 FROM THERE ON OUT:
 - Break the stories down until tickets were ready for the take.  Boy-oh-Boy, the list was long.  
-With an optimistic team, like ours, that was a good thingy.
-- I, as the SCRUM master did some research to find out what my responsibilities were:
+With an optimistic team, like ours, that was a good thingy.  
+- Creating tickets together felt like time-loss to the team, so while I worked on tickets, the rest created wireframes.
+  The moment, I realized we needed to do this together, I did get resistance.
+- That's why I, as the SCRUM master did some research to find out what my responsibilities were:
 
 ![img_1.png](IMG-README/scrumMasterMeme.png)
 
@@ -162,17 +164,20 @@ a sprint is all about.
     - Is it realistic to finish the stories by the delivery-date?
     - What is absolute priority?
     - ...
-It was, in my opinion an interesting meeting in which we could order tickets according their importance.
+It was, in my opinion an interesting meeting in which we could order tickets according their importance.  It took a while to get 
+everybody's to stop working and get full attention.  As I didn't let go, we started prioritising:
 Priority would now be displaying the products, the functionality of the "add to cart"-button, completing the checkout 
 and finalizing payment, log-in and log-out, seller-page.  
 
-Everybody likes working with tickets. It works motivational to see the list of tickets, in the done-column grow.
+Everybody likes working with tickets from the SCRUM-board. Although, they aren't consulting and using it as much as it could be used.
+That's a pitty, it works motivational to see the list of tickets, in the done-column grow.
 
-Things went slower than we all wanted them to go.  We went over the estimated times.
-But that's fine.  I made clear in the beginning, these were estimations and not deadlines.
+Things went slower than we all wanted them to go.  We went over the estimated times. And realised everything went smoother in our 
+heads then in reality.  But that's fine.  I made clear in the beginning, these were estimations and not deadlines.
 I know for a fact we are all working hard.
 
-Everybody seems to agree, that communication is going really well.
+Everybody seems to agree, that communication is going better as time passes.
+Also the Git is going well.
 
 There is still optimism to be found on finishing everything in time.  Although wanting to accomplish and being able to do so,
 are 2 different things.  Time will tell.
